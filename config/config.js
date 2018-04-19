@@ -9,6 +9,12 @@ module.exports = {
         smtpHost: 'smtp.gmail.com',
         smtpPort: 587,
         secureConnection: true
+
+        // username: 'cyndy@cyndyporter.com',
+        // password: 'LunaJune622rt',
+        // smtpHost: 'smtp.cyndyporter.com',
+        // smtpPort: 587,
+        // secureConnection: true
     }
 
 };
