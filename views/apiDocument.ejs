@@ -1,0 +1,2062 @@
+
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CyndyPorter | Services</title>
+<link rel="shortcut icon" href="http://mobulous.in/homefuud/totrr_favicon.ico"/>
+<style>
+
+
+.content {
+    width: 60%;
+    margin: 50px auto;
+    padding: 20px;
+  }
+  .content h1 {
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  .content h2 {
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #333;
+    margin: 0 0 20px;
+  }
+  .content p {
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.5em;
+    margin: 0 0 20px;
+  }
+  .content p:last-child {
+    margin: 0;
+  }
+  .content a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff0;
+    color: #000;
+    text-decoration: none;
+  }
+  .content a.button:hover {
+    background: #000;
+    color: #ff0;
+  }
+  .content.title {
+    position: relative;
+    background: none;
+    border: 2px dashed #333;
+  }
+  .content.title h1 span.demo {
+    display: inline-block;
+    font-size: .5em;
+    padding: 5px 10px;
+    background: #000;
+    color: #fff;
+    vertical-align: top;
+    margin: 7px 0 0;
+  }
+  .content.title .back-to-article {
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+  }
+  .content.title .back-to-article a {
+    padding: 10px 20px;
+    background: #f60;
+    color: #fff;
+    text-decoration: none;
+  }
+  .content.title .back-to-article a:hover {
+    background: #f90;
+  }
+  .content.title .back-to-article a i {
+    margin-left: 5px;
+  }
+  .content.white {
+    background: #fff;
+    box-shadow: 0 0 10px #999;
+  }
+  .content.black {
+    background: #000;
+  }
+  .content.black p {
+    color: #999;
+  }
+  .content.black p a {
+    color: #08c;
+  }
+
+  .accordion-container {
+    width: 100%;
+    margin: 0 0 20px;
+    clear: both;
+  }
+  .accordion-toggle {
+    margin-bottom: 15px;
+    position: relative;
+    display: block;
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: 300;
+    background: #BBB;
+    color: #fff;
+    text-decoration: none;
+    font-family: Bree serif !important;
+  }
+  .accordion-toggle.open {
+    background: #1e2e65;
+    color: #fff;
+  }
+  .accordion-toggle:hover {
+    background:rgb(237,156,40);
+    color: #fff!important;
+  }
+  .accordion-toggle span.toggle-icon {
+    position: absolute;
+    top: 17px;
+    left: 20px;
+    font-size: 1.5em;
+  }
+  .accordion-content {
+    display: none;
+    padding: 20px;
+    overflow: auto;
+    font-family: Bree serif;
+  }
+  .accordion-content img {
+    display: block;
+    float: left;
+    margin: 0 15px 10px 0;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* media query for mobile */
+  @media (max-width: 767px) {
+    .content {
+      width: auto;
+    }
+    .accordion-content {
+      padding: 10px 0;
+      overflow: inherit;
+    }
+  }
+</style>
+<div class="container pages">
+    <div class="row text-left" style="padding:10px;">
+      <h2 style="text-align:center;"></h2>
+        <div class="page-header"><h3>Service Listing</h3></div>
+        <div class="page-header">Base Url : http://ec2-18-217-140-4.us-east-2.compute.amazonaws.com/</div><br/>
+
+
+<!-- *************************logout*********************************************** -->
+ <!--     <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">1) user_logout</span>
+      </a>
+      <div class="accordion-content">
+          <p>
+              <h5>Parameters: </h5>
+              <pre>
+token
+                </pre>
+          </p>
+          <p> <h5>Response Required: </h5>Status Code (i.e: 200, 401)</p>
+         
+          <p> <h5>requestKey: </h5>user_logout</p>
+          <p> <h5>Sample Response: </h5>
+            <pre>
+{
+    "status": "SUCCESS",
+    "message": "Logout successfully.",
+    "requestKey": "api/user_logout"
+}
+            </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+-->
+
+<!-- *************************login*********************************************** -->
+      <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">1) Login</span>
+      </a>
+      <div class="accordion-content">
+          <p>
+              <h5>Parameters: </h5>
+              <pre>
+'email'       => 'required|max:255',
+'password'    => 'required|max:255',
+'deviceToken'   => 'required|max:255',
+'deviceType' => 'required|max:255',
+'userType'=>'required|max:255',
+                </pre>
+          </p>
+          <p> <h5>Response Required: </h5>Status Code (ex: 200, 401)</p>
+          <p> <h5>Brief Description: </h5>device_type: android or iphone</p>
+          <p> <h5>requestKey: </h5>login</p>
+<p> <h5>method: </h5>POST</p>
+          <p> <h5>Sample Response: </h5>
+            <pre>
+{
+    "status": 200,
+    "data": {
+        "email": "aman1@gmail.com",
+        "userName": "Aman",
+        "phoneNumber": "32534546",
+        "stylistName": "Test",
+        "stylistId": "2",
+        "userType": "user",
+        "deviceType": "android",
+        "deviceToken": "53466",
+        "id": 4,
+        "createdAt": "2018-04-06T08:54:49.000Z",
+        "updatedAt": "2018-04-06T08:54:49.000Z",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNTIzMDA2ODU3fQ.dvLq8ifMcMQHTynI8fJFpSTrrcfu338cW2WPoraXeUs"
+    },
+    "message": "Logged In Successfully"
+}  </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+<!-- *************************signup*********************************************** -->
+      <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">2) SignUp</span>
+      </a>
+      <div class="accordion-content">
+    <!--  <p>signup_type = normal,amazon,facebook,twitter,gmail</p>
+       <p>account_type = saving,current</p>
+      <p>payment_method = amazon,paypal,google,credit_debit,apple</p>
+    <p>  user_type   = host,foodie  <p>
+    <p>notification_status = on,off</p>
+-->
+              <h5>Parameters: </h5>
+              <pre>
+'userName'   => 'required|max:255',
+'userType'    => 'required|max:255',
+'email'        => 'required|email|max:255',
+'password' => 'required|max:255',
+'phoneNumber'     => 'required|max:255',
+'stylistName'   => 'required|max:255',
+'stylistId' => 'required|max:255'
+'deviceType'    => 'required|max:255',
+'deviceToken'        => 'required|email|max:255'
+
+
+ 
+                </pre>
+          </p>
+          <p> <h5>Response Required: </h5>Status Code (ex: 200, 401)</p>
+          <p> <h5>Brief Description: </h5>device_type: android or iphone , user_type(user/admin)</p>
+          <p> <h5>requestKey: </h5>signup</p>
+<p> <h5>method: </h5>POST</p>
+          <p> <h5>Sample Response: </h5>
+            <pre>
+{
+    "status": 200,
+    "data": {
+        "email": "aman.verma@gmail.com",
+        "phoneNumber": "32534546",
+        "userName": "Aman",
+        "stylistName": "Test",
+        "userType": "user",
+        "deviceType": "android",
+        "deviceToken": "53466",
+        "stylistId": "2",
+        "createdAt": "2018-04-06T09:41:19.247Z",
+        "updatedAt": "2018-04-06T09:41:19.247Z",
+        "id": 8
+    },
+    "message": "Signup Successfully"
+}
+            </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+      
+
+<!-- *************************Stylist_List*********************************************** --> 
+      <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">3) getStylistList</span>
+      </a> 
+      <div class="accordion-content">
+          <p>
+              <h5>Parameters: </h5>
+              <pre>
+  Not required
+                </pre>
+          </p>
+          <p> <h5>Response Required: </h5>Status Code (ex: 200, 401)</p>
+          <p> <h5>Brief Description: </h5></p>
+          <p> <h5>requestKey: </h5>getStylistList</p>
+<p> <h5>method: </h5>GET</p>
+          <p> <h5>Sample Response: </h5>
+<pre>
+  {
+    "status": 200,
+    "data": [
+        {
+            "name": "aman",
+            "addedBy": "aman@gmail.com",
+            "id": 1,
+            "createdAt": "2018-04-06T10:51:22.000Z",
+            "updatedAt": "2018-04-06T10:51:22.000Z"
+        },
+        {
+            "name": "test",
+            "addedBy": "aman@gmail.com",
+            "id": 2,
+            "createdAt": "2018-04-06T10:51:38.000Z",
+            "updatedAt": "2018-04-06T10:51:38.000Z"
+        }
+    ],
+    "messge": "Stylist List Fetched Successfully"
+}
+            </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+<!-- *************************Stylist_List*********************************************** --> 
+
+
+
+<!-- *************************Add_Stylist*********************************************** --> 
+      <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">4) addStylist</span>
+      </a> 
+      <div class="accordion-content">
+          <p>
+              <h5>Parameters: </h5>
+              <pre>
+  'name'       => 'required|max:255',
+'token'    => 'required|max:255',
+'addedBy'   => 'required|max:255',
+'userType' => 'required|max:255',
+                </pre>
+          </p>
+          <p> <h5>Response Required: </h5>Status Code (ex: 200, 401)</p>
+          <p> <h5>Brief Description: Only admin can add stylist</h5></p>
+          <p> <h5>requestKey: </h5>addStylist</p>
+<p> <h5>method: </h5>POST</p>
+          <p> <h5>Sample Response: </h5>
+<pre>
+ {
+    "status": 200,
+    "data": {
+        "name": "test",
+        "addedBy": "aman@gmail.com",
+        "createdAt": "2018-04-06T10:33:04.291Z",
+        "updatedAt": "2018-04-06T10:33:04.291Z",
+        "id": 4
+    },
+    "message": "Stylist added successfully"
+}
+            </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+<!-- *************************Add_Stylist*********************************************** --> 
+
+<!-- *************************User_Profile*********************************************** --> 
+      <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">5) getUserProfile</span>
+      </a> 
+      <div class="accordion-content">
+          <p>
+              <h5>Parameters: </h5>
+              <pre>
+  'email'        => 'required|email|max:255',
+'token' => 'required',
+                </pre>
+          </p>
+          <p> <h5>Response Required: </h5>Status Code (ex: 200, 401)</p>
+          <p> <h5>Brief Description: </h5>token (ex: Mobulous eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNTIzMDA2ODU3fQ.dvLq8ifMcMQHTynI8fJFpSTrrcfu338cW2WPoraXeUs)</p>
+          <p> <h5>requestKey: </h5>getUserProfile</p>
+ <p> <h5>method: </h5>POST</p>
+          <p> <h5>Sample Response: </h5>
+<pre>
+  {
+    "status": 200,
+    "data": {
+        "email": "aman1@gmail.com",
+        "userName": "Aman",
+        "phoneNumber": "32534546",
+        "stylistName": "Test",
+        "stylistId": "2",
+        "userType": "user",
+        "deviceType": "android",
+        "deviceToken": "53466",
+        "id": 4,
+        "createdAt": "2018-04-06T08:54:49.000Z",
+        "updatedAt": "2018-04-06T08:54:49.000Z"
+    },
+    "message": "User Profile Fetched Successfully"
+}
+            </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+<!-- *************************User_Profile*********************************************** --> 
+
+
+<!-- *************************User_List*********************************************** --> 
+      <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">6) getAllUsers</span>
+      </a> 
+      <div class="accordion-content">
+          <p>
+              <h5>Parameters: </h5>
+              <pre>
+  'email'        => 'required|email|max:255',
+'token' => 'required',
+                </pre>
+          </p>
+          <p> <h5>Response Required: </h5>Status Code (ex: 200, 401)</p>
+          <p> <h5>Brief Description: </h5>token (ex: Mobulous eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNTIzMDA2ODU3fQ.dvLq8ifMcMQHTynI8fJFpSTrrcfu338cW2WPoraXeUs)</p>
+          <p> <h5>requestKey: </h5>getAllUsers</p>
+ <p> <h5>method: </h5>POST</p>
+          <p> <h5>Sample Response: </h5>
+<pre>
+  {
+    "status": 200,
+    "data": {
+        "email": "aman1@gmail.com",
+        "userName": "Aman",
+        "phoneNumber": "32534546",
+        "stylistName": "Test",
+        "stylistId": "2",
+        "userType": "user",
+        "deviceType": "android",
+        "deviceToken": "53466",
+        "id": 4,
+        "createdAt": "2018-04-06T08:54:49.000Z",
+        "updatedAt": "2018-04-06T08:54:49.000Z"
+    },
+    "message": "User Profile Fetched Successfully"
+}
+            </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+<!-- *************************User_List*********************************************** --> 
+
+
+<!-- *************************change_password*********************************************** --> 
+     <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">7) Send Password Reset Link</span>
+      </a> 
+      <div class="accordion-content">
+          <p>
+              <h5>Parameters: </h5>
+              <pre>
+  'email'=>'required' 
+                </pre>
+          </p>
+          <p> <h5>Response Required: </h5>Status Code (i.e: 200, 401)</p>
+          <!-- <p> <h5>Brief Description: </h5>device_type: android or iphone</p> -->
+          <p> <h5>requestKey: </h5>sendPasswordResetLink</p>
+          <p> <h5>Sample Response: </h5>
+            {
+                "status": 200,
+                "message": "Reset Password link has sent on your registered mail. Please check your mail"
+            }
+            </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+
+<!-- *************************change_password*********************************************** --> 
+
+<!-- Reset Password -->
+<a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+    <span style="margin-left:50px;line-height: 1.5em;">8) Reset Password (For Back-End)</span>
+</a> 
+<div class="accordion-content">
+    <p>
+        <h5>Parameters: </h5>
+        <pre>      
+'newPassword' => 'required|max:255',
+'confirmPassword' => 'required|max: 255',
+          </pre>
+    </p>
+    <p> <h5>Response Required: </h5>Status Code (i.e: 200, 401)</p>
+    <p> <h5>Brief Description: </h5>device_type: android or iphone</p>
+    <p> <h5>requestKey: </h5>resetPassword/:token</p>
+    <p> <h5>Sample Response: </h5>
+        Password changed successfully
+      </pre>
+    </p>
+    <p> <h5>Test Status: </h5></p>
+    <p> <h5>Notes: </h5></p>
+</div>
+
+<!-- Reset Password -->
+
+
+<!-- *************************User_Profile*********************************************** --> 
+<a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+    <span style="margin-left:50px;line-height: 1.5em;">9) Upload User Image</span>
+</a> 
+<div class="accordion-content">
+    <p>
+        <h5>Parameters: </h5>
+        <pre>
+'email'        => 'required|email|max:255',
+'token' => 'required',
+'image' => 'required'
+          </pre>
+    </p>
+    <p> <h5>Response Required: </h5>Status Code (ex: 200, 401)</p>
+    <p> <h5>Brief Description: </h5>token (ex: Mobulous eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNTIzMDA2ODU3fQ.dvLq8ifMcMQHTynI8fJFpSTrrcfu338cW2WPoraXeUs)</p>
+    <p> <h5>requestKey: </h5>uploadUserImage</p>
+<p> <h5>method: </h5>POST</p>
+    <p> <h5>Sample Response: </h5>
+<pre>
+    {
+        "status": 200,
+        "data": {
+            "email": "aman@gmail.com",
+            "imageUrl": "http://ec2-54-183-184-110.us-west-1.compute.amazonaws.com/images/15237135297705236.jpg",
+            "createdAt": "2018-04-14T13:45:29.780Z",
+            "updatedAt": "2018-04-14T13:45:29.780Z",
+            "id": "5ad205f99cf1ff3b7c6fa7de"
+        },
+        "message": "image successfully uploaded"
+    }
+      </pre>
+    </p>
+    <p> <h5>Test Status: </h5></p>
+    <p> <h5>Notes: </h5></p>
+</div>
+
+
+<!-- *************************User_Profile*********************************************** --> 
+
+
+
+<!-- *************************Get Users on Dashboard*********************************************** --> 
+<a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+    <span style="margin-left:50px;line-height: 1.5em;">10) Get Users List on Dashboard (Admin)</span>
+</a> 
+<div class="accordion-content">
+    <p>
+        <h5>Parameters: </h5>
+        <pre>
+'userType'        => 'required|max:255',
+'token' => 'required'
+          </pre>
+    </p>
+    <p> <h5>Response Required: </h5>Status Code (ex: 200, 401)</p>
+    <p> <h5>Brief Description: </h5>token (ex: Mobulous eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNTIzMDA2ODU3fQ.dvLq8ifMcMQHTynI8fJFpSTrrcfu338cW2WPoraXeUs)</p>
+    <p> <h5>requestKey: </h5>getUsersToManageImage</p>
+<p> <h5>method: </h5>POST</p>
+    <p> <h5>Sample Response: </h5>
+<pre>
+    {
+        "status": 200,
+        "data": [
+            {
+                "id": "5acf43f5537bac0014b0d29e",
+                "email": "aman1@gmail.com",
+                "userName": "Aman",
+                "stylistName": "Test",
+                "phoneNumber": "32534546",
+                "imageId": "5ad4aee0d38e7b74d93f3fd5",
+                "imageUrl": "http://127.0.0.1:1337/images/15238878407891496.jpg",
+                "styleId": "5ad4aee1d38e7b74d93f3fd6"
+            },
+            {
+                "id": "5acf43f5537bac0014b0d29e",
+                "email": "aman1@gmail.com",
+                "userName": "Aman",
+                "stylistName": "Test",
+                "phoneNumber": "32534546",
+                "imageId": "5ad4aee5d38e7b74d93f3fd7",
+                "imageUrl": "http://127.0.0.1:1337/images/15238878449973683.jpg",
+                "styleId": "5ad4aee5d38e7b74d93f3fd8"
+            }
+        ],
+        "message": "Users Fetched Successfully"
+    }
+      </pre>
+    </p>
+    <p> <h5>Test Status: </h5></p>
+    <p> <h5>Notes: </h5></p>
+</div>
+
+
+<!-- *************************Get Users on Dashboard*********************************************** --> 
+
+
+<!-- *************************Update Image Details*********************************************** --> 
+<a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+    <span style="margin-left:50px;line-height: 1.5em;">11) Update Image Details (Admin)</span>
+</a> 
+<div class="accordion-content">
+    <p>
+        <h5>Parameters: </h5>
+        <pre>
+'colors'        => 'required|email|max:255',
+'styleId' => 'required',
+'deviceToken' => 'required|max:255'
+'token' => 'required'
+          </pre>
+    </p>
+    <p> <h5>Response Required: </h5>Status Code (ex: 200, 401)</p>
+    <p> <h5>Brief Description: </h5>token (ex: Mobulous eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNTIzMDA2ODU3fQ.dvLq8ifMcMQHTynI8fJFpSTrrcfu338cW2WPoraXeUs)</p>
+    <p> <h5>requestKey: </h5>updateImageDetails</p>
+<p> <h5>method: </h5>POST</p>
+    <p> <h5>Sample Response: </h5>
+<pre>
+    {
+        "status": 200,
+        "data": [
+          {
+            "image": {
+              "email": "aman1@gmail.com",
+              "id": "5ad718024fca144f2900b7c2",
+              "imageUrl": "http://127.0.0.1:1337/images/15240458260344820.jpg"
+            },
+            "colors": {
+              "hair": "#e01b1b",
+              "skin": "#040fdc",
+              "eyes": "#46d059",
+              "lips": "#1822d9",
+              "metals": "#e5cbcb",
+              "dress": "#ee3ede"
+            },
+            "isUpdated": 1,
+            "createdAt": "2018-04-18T10:03:46.289Z",
+            "updatedAt": "2018-04-18T10:04:19.051Z",
+            "id": "5ad718024fca144f2900b7c3"
+          }
+        ],
+        "message": "Image Update Success"
+      }
+      </pre>
+    </p>
+    <p> <h5>Test Status: </h5></p>
+    <p> <h5>Notes: </h5></p>
+</div>
+
+
+<!-- *************************Update Image Details*********************************************** --> 
+
+
+<!-- *************************Send image report in pdf*********************************************** --> 
+<a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+    <span style="margin-left:50px;line-height: 1.5em;">12) Send Image Details on Email</span>
+</a> 
+<div class="accordion-content">
+    <p>
+        <h5>Parameters: </h5>
+        <pre>
+'email'        => 'required|email|max:255',
+'styleId' => 'required',
+'token' => 'required'
+          </pre>
+    </p>
+    <p> <h5>Response Required: </h5>Status Code (ex: 200, 401)</p>
+    <p> <h5>Brief Description: </h5>token (ex: Mobulous eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNTIzMDA2ODU3fQ.dvLq8ifMcMQHTynI8fJFpSTrrcfu338cW2WPoraXeUs)</p>
+    <p> <h5>requestKey: </h5>sendDetailsInPDF</p>
+<p> <h5>method: </h5>POST</p>
+    <p> <h5>Sample Response: </h5>
+<pre>
+    {
+        "status": 200,
+        "message": "pdf report successfully sent"
+    }
+      </pre>
+    </p>
+    <p> <h5>Test Status: </h5></p>
+    <p> <h5>Notes: </h5></p>
+</div>
+
+
+<!-- *************************Send image report in pdf*********************************************** --> 
+
+<!-- *************************Get Notifications List*********************************************** --> 
+<a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+    <span style="margin-left:50px;line-height: 1.5em;">13) Get Notifications List</span>
+</a> 
+<div class="accordion-content">
+    <p>
+        <h5>Parameters: </h5>
+        <pre>
+'email'        => 'required|email|max:255',
+'token' => 'required'
+          </pre>
+    </p>
+    <p> <h5>Response Required: </h5>Status Code (ex: 200, 401)</p>
+    <p> <h5>Brief Description: </h5>token (ex: Mobulous eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNTIzMDA2ODU3fQ.dvLq8ifMcMQHTynI8fJFpSTrrcfu338cW2WPoraXeUs)</p>
+    <p> <h5>requestKey: </h5>getAllNotifications</p>
+<p> <h5>method: </h5>POST</p>
+    <p> <h5>Sample Response: </h5>
+<pre>
+    {
+        "status": 200,
+        "data": {
+            "email": "aman1@gmail.com",
+            "notifications": [
+               
+                {
+                    "notification": {
+                        "title": "Congratulations",
+                        "body": "Your image has been styled by Cyndy Porter"
+                    },
+                    "data": {
+                        "styleId": "5ad75c6b23d666156a1b3e60",
+                        "imageUrl": "http://127.0.0.1:1337/images/15240633396815956.jpg",
+                        "updateTime": 1524063979638
+                    }
+                },
+                {
+                    "notification": {
+                        "title": "Congratulations",
+                        "body": "Your image has been styled by Cyndy Porter"
+                    },
+                    "data": {
+                        "styleId": "5ad75ee1c5c91a1960e84c37",
+                        "imageUrl": "http://127.0.0.1:1337/images/15240639697055344.jpg",
+                        "updateTime": 1524063979638
+                    }
+                }
+            ],
+            "createdAt": "2018-04-18T14:53:45.651Z",
+            "updatedAt": "2018-04-18T15:06:24.599Z",
+            "id": "5ad75bf923d666156a1b3e5e"
+        },
+        "message": "Notification list fetched"
+    }
+      </pre>
+    </p>
+    <p> <h5>Test Status: </h5></p>
+    <p> <h5>Notes: </h5></p>
+</div>
+
+
+<!-- *************************Get Notification List*********************************************** --> 
+
+
+
+
+<!--      <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">5) userChangePassword_token</span>
+      </a> 
+      <div class="accordion-content">
+          <p>
+              <h5>Parameters: </h5>
+              <pre>
+  'token'=>'required'  ,          
+'confirm_password' => 'required|min:6',
+'new_password' => 'required|min:6',
+                </pre>
+          </p>
+          <p> <h5>Response Required: </h5>SUCCESS or FAILURE</p>
+          <p> <h5>Brief Description: </h5>device_type: android or iphone</p>
+          <p> <h5>requestKey: </h5>userChangePassword_token</p>
+          <p> <h5>Sample Response: </h5>
+  {
+      "status": "SUCCESS",
+      "message": "Password changed successfully.",
+      "requestKey": "api/userChangePassword_token"
+  }
+            </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+
+
+
+      <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">6) view_profile</span>
+      </a> 
+      <div class="accordion-content">
+          <p>
+              <h5>Parameters: </h5>
+              <pre>
+'token' => 'required|min:255'
+
+                </pre>
+          </p>
+          <p> <h5>Response Required: </h5>SUCCESS or FAILURE</p>
+         
+          <p> <h5>requestKey: </h5>view_profile</p>
+          <p> <h5>Sample Response: </h5>
+ <pre>{
+    "status": "SUCCESS",
+    "view_profile": {
+        "user_data": {
+            "id": 22,
+            "category": "cat1,cat2",
+            "cusines": "cui1,cusu2",
+            "user_type": "host",
+            "signup_type": "normal",
+            "payment_method": "paypal",
+            "gmail_id": "",
+            "facebook_id": "",
+            "twiiter_id": "",
+            "amazon_id": "",
+            "full_name": "manish solanki",
+            "nickname": "manish12",
+            "mobile": "972113901",
+            "email": "3ss123121121@gmail.com",
+            "gender": "male",
+            "image": "",
+            "likes": "food1,food2",
+            "dislikes": "food1,food2",
+            "about": "hello",
+            "rules": "rulless",
+            "disclaimer": "hello",
+            "maximum_booking_slot": "44",
+            "original_password": "123456",
+            "address": "dasfadsf",
+            "status": "active",
+            "devicetype": "android",
+            "devicetoken": "34242343",
+            "notification_status": "on",
+            "lat": "",
+            "longs": "",
+            "created_at": "2018-03-12 00:00:00",
+            "updated_at": "2018-03-12 13:10:55",
+            "bank_name": "icici",
+            "name_on_account": "manish kumar",
+            "account_no": "manish kumar",
+            "account_type": "saving"
+        },
+        "likes": [
+            {
+                "id": 1,
+                "name": "food1"
+            },
+            {
+                "id": 2,
+                "name": "food2"
+            }
+        ],
+        "dislikes": [
+            {
+                "id": 1,
+                "name": "food1"
+            },
+            {
+                "id": 2,
+                "name": "food2"
+            }
+        ],
+        "category": [
+            {
+                "id": 1,
+                "name": "cat1"
+            },
+            {
+                "id": 2,
+                "name": "cat2"
+            }
+        ],
+        "cusines": [
+            {
+                "id": 1,
+                "name": "cui1"
+            },
+            {
+                "id": 3,
+                "name": "cusu2"
+            }
+        ]
+    },
+    "message": "View Profile Successfully.",
+    "requestKey": "api/view_profile"
+}           </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+      
+      
+
+
+
+      <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">7) foods_list</span>
+      </a>
+      <div class="accordion-content">
+          <p>
+              <h5>Parameters: </h5>
+            
+          </p>
+          <p> <h5>Response Required: </h5>SUCCESS or FAILURE</p>
+         
+          <p> <h5>requestKey: </h5>foods_list</p>
+          <p> <h5>Sample Response: </h5>
+            <pre>
+{
+    "status": "SUCCESS",
+    "foods_list": [
+        {
+            "id": 2,
+            "food_name": "food2",
+            "created_at": "2018-03-12 00:00:00",
+            "updated_at": "2018-03-12 00:00:00"
+        },
+        {
+            "id": 1,
+            "food_name": "food1",
+            "created_at": "2018-03-12 00:00:00",
+            "updated_at": "2018-03-12 00:00:00"
+        }
+    ],
+    "message": "foods listing.",
+    "requestKey": "api/foods_list"
+}
+            </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+
+
+
+ <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">8) cusines_list</span>
+      </a>
+      <div class="accordion-content">
+          <p>
+              <h5>Parameters: </h5>
+             
+          </p>
+          <p> <h5>Response Required: </h5>SUCCESS or FAILURE</p>
+         
+          <p> <h5>requestKey: </h5>cusines_list</p>
+          <p> <h5>Sample Response: </h5>
+            <pre>
+{
+    "status": "SUCCESS",
+    "cusines_list": [
+        {
+            "id": 1,
+            "cusines_name": "cui1",
+            "created_at": "2018-03-12 00:00:00",
+            "updated_at": "2018-03-12 00:00:00"
+        },
+        {
+            "id": 3,
+            "cusines_name": "cusu2",
+            "created_at": "2018-03-12 00:00:00",
+            "updated_at": "2018-03-12 00:00:00"
+        }
+    ],
+    "message": "cusines listing.",
+    "requestKey": "api/cusines_list"
+}            </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+
+
+
+ <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">9) category_list</span>
+      </a>
+      <div class="accordion-content">
+          <p>
+              <h5>Parameters: </h5>
+            
+          </p>
+          <p> <h5>Response Required: </h5>SUCCESS or FAILURE</p>
+         
+          <p> <h5>requestKey: </h5>category_list</p>
+          <p> <h5>Sample Response: </h5>
+            <pre>
+{
+    "status": "SUCCESS",
+    "category_list": [
+        {
+            "id": 1,
+            "category_name": "cat1",
+            "created_at": "2018-03-12 00:00:00",
+            "updated_at": "2018-03-12 00:00:00"
+        },
+        {
+            "id": 2,
+            "category_name": "cat2",
+            "created_at": "2018-03-12 00:00:00",
+            "updated_at": "2018-03-12 00:00:00"
+        }
+    ],
+    "message": "category listing.",
+    "requestKey": "api/category_list"
+}
+            </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+
+
+
+
+<a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">10) sendVerificationCode</span>
+      </a>
+      <div class="accordion-content">
+          <p>
+              <h5>Parameters: </h5>
+              mobile
+            
+          </p>
+          <p> <h5>Response Required: </h5>SUCCESS or FAILURE</p>
+         
+          <p> <h5>requestKey: </h5>sendVerificationCode</p>
+          <p> <h5>Sample Response: </h5>
+            <pre>
+{
+    "status": "SUCCESS",
+    "sendVerificationCode": {
+        "verificationCode": "5854"
+    },
+    "message": "A verification code has been sent to your registered Number.",
+    "requestKey": "api/sendVerificationCode"
+}
+            </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+
+
+
+<a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">11) userForgotPassword</span>
+      </a>
+      <div class="accordion-content">
+          <p>
+              <h5>Parameters: </h5>
+              email_number
+            
+          </p>
+          <p> <h5>Response Required: </h5>SUCCESS or FAILURE</p>
+         
+          <p> <h5>requestKey: </h5>userForgotPassword</p>
+          <p> <h5>Sample Response: </h5>
+            <pre>
+{
+    "status": "SUCCESS",
+    "userForgotPassword": {
+        "verificationCode": "4468"
+    },
+    "message": "A verification code has been sent to your registered email id.",
+    "requestKey": "api/userForgotPassword"
+}        </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+
+
+<a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">12) social_login_check</span>
+      </a>
+      <div class="accordion-content">
+          <p>
+              <h5>Parameters: </h5>
+              social_id,user_type(host/foodie),devicetype(android/iphone),devicetoken
+            
+          </p>
+          <p> <h5>Response Required: </h5>SUCCESS or FAILURE</p>
+         
+          <p> <h5>requestKey: </h5>social_login_check</p>
+          <p> <h5>Sample Response: </h5>
+            <pre>
+{
+    "status": "SUCCESS",
+    "userSignUp": {
+        "user_data": {
+            "id": 63,
+            "category": "Café,Tabletop cooking",
+            "cusines": "Sambar,Sevai",
+            "likes": "Chicken bog,Gumbo",
+            "dislikes": "Gumbo,Hawaiian haystack",
+            "user_type": "host",
+            "signup_type": "normal",
+            "payment_method": "",
+            "gmail_id": "",
+            "facebook_id": "",
+            "twiiter_id": "",
+            "amazon_id": "789456123",
+            "full_name": "Raman",
+            "nickname": "trial",
+            "mobile": "9897654321",
+            "email": "rt@gmail.com",
+            "gender": "male",
+            "image": "",
+            "about": "Ewgergerg",
+            "rules": "Gregregerg",
+            "disclaimer": "Gregregreg",
+            "maximum_booking_slot": "8",
+            "original_password": "12345",
+            "address": "Coventry Street London W1J 9HS, UK",
+            "status": "active",
+            "devicetype": "iphone",
+            "devicetoken": "b1e2d3bb55d44bfc4492bd33aac79afeaee474e92c12138e18b021e2326",
+            "notification_status": "",
+            "lat": "51.50998",
+            "longs": "-0.1337",
+            "created_at": "2018-03-15 00:00:00",
+            "updated_at": "2018-03-15 12:43:24",
+            "token": "WMdzfjmbYx1l8jJxMOpzeCq4qtztWcwIsBNxuMsSuYpCYrDw3j",
+            "bank_name": "icici",
+            "name_on_account": "Rajput",
+            "account_no": "Rajput",
+            "account_type": "current"
+        },
+        "likes": [
+            {
+                "id": 4,
+                "name": "Chicken bog"
+            },
+            {
+                "id": 7,
+                "name": "Gumbo"
+            }
+        ],
+        "dislikes": [
+            {
+                "id": 7,
+                "name": "Gumbo"
+            },
+            {
+                "id": 8,
+                "name": "Hawaiian haystack"
+            }
+        ],
+        "category": [
+            {
+                "id": 2,
+                "name": "Café"
+            },
+            {
+                "id": 4,
+                "name": "Tabletop cooking"
+            }
+        ],
+        "cusines": [
+            {
+                "id": 1,
+                "name": "Sambar"
+            },
+            {
+                "id": 4,
+                "name": "Sevai"
+            }
+        ]
+    },
+    "message": "Login Successfully.",
+    "requestKey": "api/social_login_check"
+}
+
+
+{
+    "status": "FAILURE",
+    "message": "NOT REGISTERED",
+    "requestKey": "api/social_login_check"
+}         </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+
+
+
+      <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">13) edit_profile</span>
+      </a>
+      <div class="accordion-content">
+          <p>
+              <h5>Parameters: </h5>
+               <pre>
+'token'=>'required',  
+'address'=>'required'  ,          
+'full_name' => 'required|min:255',
+'email' => 'required|min:255',
+'gender' => 'required|min:255',
+'likes' => 'required|min:255',
+'dislike' => 'required|min:255',
+'category' => ',
+'cusines' => '',
+'disclaimer'=>''
+'rules'=>''
+'about'=>''
+'maximum_booking_slot' => '',
+'files[]'=>''
+'image'=>'',
+'lat'    => '',
+'long'   => '',
+                </pre>
+            
+          </p>
+          <p> <h5>Response Required: </h5>SUCCESS or FAILURE</p>
+         
+          <p> <h5>requestKey: </h5>edit_profile</p>
+          <p> <h5>Sample Response: </h5>
+            <pre>
+{
+    "status": "SUCCESS",
+    "userSignUp": {
+        "user_data": {
+            "id": 77,
+            "category": "Barbecue,Café,Cafeteria,Tabletop cooking",
+            "cusines": "Sevai,Baati",
+            "likes": "Chicken bog,Dirty rice",
+            "dislikes": "Glorified rice,Hawaiian haystack",
+            "user_type": "host",
+            "signup_type": "twiiter",
+            "payment_method": "",
+            "gmail_id": "",
+            "facebook_id": "",
+            "twiiter_id": "1234567",
+            "amazon_id": "",
+            "full_name": "manish solanki",
+            "nickname": "manish12",
+            "mobile": "3243243dd3ee1112343aa22",
+            "email": "asdfasdfdsdda2222eedd2122@gmail.com",
+            "gender": "male",
+            "image": "http://mobulous.in/homefuud/profile_resize/20180316094220529038.jpg",
+            "about": "hello",
+            "rules": "",
+            "disclaimer": "",
+            "maximum_booking_slot": "",
+            "original_password": "123456",
+            "address": "dasfadsf1234",
+            "status": "active",
+            "devicetype": "android",
+            "devicetoken": "34242343",
+            "notification_status": "on",
+            "lat": "51.50998",
+            "longs": "-0.1337",
+            "created_at": "2018-03-16 00:00:00",
+            "updated_at": "2018-03-16 14:16:05",
+            "bank_name": "",
+            "name_on_account": "",
+            "account_no": "",
+            "account_type": ""
+        },
+        "likes": [
+            {
+                "id": 4,
+                "name": "Chicken bog"
+            },
+            {
+                "id": 5,
+                "name": "Dirty rice"
+            }
+        ],
+        "dislikes": [
+            {
+                "id": 6,
+                "name": "Glorified rice"
+            },
+            {
+                "id": 8,
+                "name": "Hawaiian haystack"
+            }
+        ],
+        "category": [
+            {
+                "id": 1,
+                "name": "Barbecue"
+            },
+            {
+                "id": 2,
+                "name": "Café"
+            },
+            {
+                "id": 3,
+                "name": "Cafeteria"
+            },
+            {
+                "id": 4,
+                "name": "Tabletop cooking"
+            }
+        ],
+        "cusines": [
+            {
+                "id": 4,
+                "name": "Sevai"
+            },
+            {
+                "id": 5,
+                "name": "Baati"
+            }
+        ],
+        "pro_image": [
+            "http://mobulous.in/homefuud/product_image/normal_images/1521209765.jpg",
+            "http://mobulous.in/homefuud/product_image/normal_images/1521209765.jpg",
+            "http://mobulous.in/homefuud/product_image/normal_images/1521209766.jpg",
+            "http://mobulous.in/homefuud/product_image/normal_images/1521209766.jpg"
+        ]
+    },
+    "message": "Update Successfully.",
+    "requestKey": "api/edit_profile"
+}        </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+
+
+      <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">14) user_exits_check</span>
+      </a>
+      <div class="accordion-content">
+          <p>
+              <h5>Parameters: </h5>
+                'email'            => 'required|max:255',
+                'mobile'            => 'required|max:255',
+          </p>
+          <p> <h5>Response Required: </h5>SUCCESS or FAILURE</p>
+         
+          <p> <h5>requestKey: </h5>user_exits_check</p>
+          <p> <h5>Sample Response: </h5>
+            <pre>
+{
+    "status": "FAILURE",
+    "message": "It seems this mobile no is already registered.",
+    "requestKey": "api/user_exits_check"
+}
+
+{
+    "status": "FAILURE",
+    "message": "It seems this email is already registered.",
+    "requestKey": "api/user_exits_check"
+}
+
+{
+    "status": "SUCCESS",
+    "message": "Not registered.",
+    "requestKey": "api/user_exits_check"
+}      </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+
+
+
+      <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">15) host_listing</span>
+      </a>
+      <div class="accordion-content">
+          <p>
+              <h5>Parameters: </h5>
+                'token'            => 'required|max:255',
+                 'lat'            => 'required|max:255',
+                  'long'            => 'required|max:255',
+               
+          </p>
+          <p> <h5>Response Required: </h5>SUCCESS or FAILURE</p>
+         
+          <p> <h5>requestKey: </h5>host_listing</p>
+          <p> <h5>Sample Response: </h5>
+            <pre>
+{
+    "status": "SUCCESS",
+    "host_listing": [
+        {
+            "id": 138,
+            "category": "American fried rice,Calas,Charleston red rice,Chicken bog",
+            "cusines": "Chicken bog,Dirty rice",
+            "likes": "Chicken bog,Dirty rice",
+            "dislikes": "Glorified rice,Hawaiian haystack",
+            "user_type": "host",
+            "signup_type": "normal",
+            "payment_method": "paypal",
+            "gmail_id": "",
+            "facebook_id": "",
+            "twiiter_id": "",
+            "amazon_id": "",
+            "full_name": "V P Naidu",
+            "nickname": "Mahi",
+            "mobile": "8246248625",
+            "email": "vpnaidu@gmail.com",
+            "gender": "male",
+            "image": "",
+            "about": "Your own Resturant, Feel Free to checkIn!",
+            "rules": "Your Resturant Your Rules",
+            "disclaimer": "No Disclaimers",
+            "maximum_booking_slot": "5",
+            "original_password": "211296",
+            "address": "152 Green Ave. Defiance, OH",
+            "status": "active",
+            "devicetype": "android",
+            "devicetoken": "abcd",
+            "notification_status": "off",
+            "lat": "28.625858",
+            "longs": "77.377365",
+            "created_at": "2018-03-22 00:00:00",
+            "updated_at": "2018-03-22 05:57:28",
+            "rating": "4",
+            "distance": "6722 km"
+        },
+        {
+            "id": 137,
+            "category": "American fried rice,Calas,Charleston red rice,Chicken bog",
+            "cusines": "Chicken bog,Dirty rice",
+            "likes": "Chicken bog,Dirty rice",
+            "dislikes": "Glorified rice,Hawaiian haystack",
+            "user_type": "host",
+            "signup_type": "normal",
+            "payment_method": "",
+            "gmail_id": "",
+            "facebook_id": "",
+            "twiiter_id": "",
+            "amazon_id": "",
+            "full_name": "Xi jingping",
+            "nickname": "Xi",
+            "mobile": "9598959895",
+            "email": "xijin@gmail.com",
+            "gender": "male",
+            "image": "http://mobulous.in/homefuud/profile_resize/20180322052703714572.jpg",
+            "about": "none",
+            "rules": "none",
+            "disclaimer": "none",
+            "maximum_booking_slot": "4",
+            "original_password": "123456",
+            "address": "Shanghai St & Mong Kok Rd, Mong Kok, Hong Kong",
+            "status": "active",
+            "devicetype": "android",
+            "devicetoken": "fTbzjfaQifI:APA91bF79JmKRGSikuKELgsYIG-gVJanQQLDe4D-S3flLpBg-o0mwS9XlfdmaDu3VocNHtBNzlH0dv2yiEXeiKkf9gWH7mKz4MzOADuLXI4_oi-M2aOcDpEp_M8_Dt14EMCoxYMv_mSe",
+            "notification_status": "on",
+            "lat": "22.320636399999994",
+            "longs": "",
+            "created_at": "2018-03-22 00:00:00",
+            "updated_at": "2018-03-22 05:27:03",
+            "rating": "4",
+            "distance": "0 km"
+        },
+
+            ],
+    "message": "Host Listing.",
+    "requestKey": "api/host_listing"
+}     </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+
+ <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">16) add_menu</span>
+      </a>
+      <div class="accordion-content">
+          <p>
+             <pre> <h5>Parameters: </h5>
+                 'token'            => 'required|max:255',
+                  'menu_id'            => '',
+                'food_type'         => 'required|max:255',
+                'meal_time'         => 'required|max:255',
+                'timeslot'      => '',
+                'item_name'     => 'required|max:255',
+                'price'       => 'required|max:255',
+                'description'     => 'required|max:255',
+                'item_name'     => 'required|max:255',
+                'pre_time' =>'required|max:255',
+                'image'         => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+          </p>
+          </pre> 
+          <p> <h5>Response Required: </h5>SUCCESS or FAILURE</p>
+      <p> <h5>Brief Description: </h5>food_type: alcarte, chef <br> timeslot : 1:00-2:00pm,3:00-4:00pm<br>meal_time : lunch or dinner<br>menu_id : optional(give id on edit menu)<br>
+      pre_time : Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday</p> 
+ 
+          <p> <h5>requestKey: </h5>add_menu</p>
+          <p> <h5>Sample Response: </h5>
+            <pre>
+{
+    "status": "SUCCESS",
+    "message": "Menu Added Successfully.",
+    "requestKey": "api/add_menu"
+}     </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+
+      <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">17) my_menu</span>
+      </a>
+      <div class="accordion-content">
+          <p>
+             <pre> <h5>Parameters: </h5>
+                 'token'            => 'required|max:255',
+                'pre_time'      => 'required|max:255',
+                'meal_time'         => 'required|max:255',
+                'host_id'         =>(optional give id from foodie side)
+          </p>
+          </pre> 
+          <p> <h5>Response Required: </h5>SUCCESS or FAILURE</p>
+      <p> <h5>Brief Description: </h5>meal_time : lunch or dinner<br>
+      pre_time : Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday</p> 
+ 
+          <p> <h5>requestKey: </h5>my_menu</p>
+          <p> <h5>Sample Response: </h5>
+            <pre>
+{
+    "status": "SUCCESS",
+    "my_menu": [
+        {
+            "id": "4",
+            "user_id": "77",
+            "food_type": "chef",
+            "meal_time": "lunch",
+            "item_name": "test foodss",
+            "price": "3000",
+            "description": "hello descriptionss",
+            "image": "http://mobulous.in/homefuud/profile_resize/20180327103628284556.jpg",
+            "day": "Monday",
+            "created_at": "2018-03-27 10:36:28",
+            "updated_at": "2018-03-04 10:36:28"
+        },
+        {
+            "id": "3",
+            "user_id": "77",
+            "food_type": "chef",
+            "meal_time": "lunch",
+            "item_name": "test foodss",
+            "price": "3000",
+            "description": "hello descriptionss",
+            "image": "http://mobulous.in/homefuud/profile_resize/20180327072921657398.jpg",
+            "day": "Monday",
+            "created_at": "2018-03-28 07:29:21",
+            "updated_at": "2018-02-12 07:29:21"
+        }
+    ],
+    "message": "Menu Listing.",
+    "requestKey": "api/my_menu"
+}   </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+
+ <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">18) menu_history</span>
+      </a>
+      <div class="accordion-content">
+          <p>
+             <pre> <h5>Parameters: </h5>
+                'token'           => 'required|max:255',
+                'pre_time'      => 'required|max:255',
+                'filter_date'=>''
+          </p>
+          </pre> 
+          <p> <h5>Response Required: </h5>SUCCESS or FAILURE</p>
+      <p> <h5>Brief Description: </h5>filter_date:optional(when filter)
+      pre_time : Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday</p> 
+ 
+          <p> <h5>requestKey: </h5>menu_history</p>
+          <p> <h5>Sample Response: </h5>
+            <pre>
+{
+    "status": "SUCCESS",
+    "menu_history": {
+        "lunch": [
+            {
+                "id": "4",
+                "user_id": "77",
+                "food_type": "chef",
+                "meal_time": "lunch",
+                "item_name": "test foodss",
+                "price": "3000",
+                "description": "hello descriptionss",
+                "image": "http://mobulous.in/homefuud/profile_resize/20180327103628284556.jpg",
+                "day": "Monday",
+                "created_at": "2018-03-27 10:36:28",
+                "updated_at": "2018-03-04 10:36:28"
+            },
+            {
+                "id": "3",
+                "user_id": "77",
+                "food_type": "chef",
+                "meal_time": "lunch",
+                "item_name": "test foodss",
+                "price": "3000",
+                "description": "hello descriptionss",
+                "image": "http://mobulous.in/homefuud/profile_resize/20180327072921657398.jpg",
+                "day": "Monday",
+                "created_at": "2018-03-27 07:29:21",
+                "updated_at": "2018-02-12 07:29:21"
+            }
+        ],
+        "dinner": [
+            {
+                "id": "1",
+                "user_id": "77",
+                "food_type": "chef",
+                "meal_time": "dinner",
+                "item_name": "test foodss",
+                "price": "3000",
+                "description": "hello descriptionss",
+                "image": "http://mobulous.in/homefuud/profile_resize/20180326133650657792.jpg",
+                "day": "Monday",
+                "created_at": "2018-03-12 13:36:50",
+                "updated_at": "2018-03-27 07:29:15"
+            }
+        ]
+    },
+    "message": "Menu history.",
+    "requestKey": "api/menu_history"
+}  </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+
+      <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">19) delete_menu</span>
+      </a>
+      <div class="accordion-content">
+         <pre> <p>
+              <h5>Parameters: </h5>
+                'token'           => 'required|max:255',
+                'menu_id'     => 'required|max:255',
+                
+          </p></pre>
+          <p> <h5>Response Required: </h5>SUCCESS or FAILURE</p>
+         
+          <p> <h5>requestKey: </h5>delete_menu</p>
+          <p> <h5>Sample Response: </h5>
+
+{
+    "status": "SUCCESS",
+    "message": "Menu deleted.",
+    "requestKey": "api/delete_menu"
+}      </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+
+
+<a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">20) add_menu_by_previous</span>
+      </a>
+      <div class="accordion-content">
+         <pre> <p>
+              <h5>Parameters: </h5>
+                'token'           => 'required|max:255',
+                'menu_id'           => 'required|max:255',
+                'meal_time'         => 'required|max:255',
+                'pre_time'      =>'required|max:255',
+                'timeslot'  =>'required|max:255'
+                
+          </p></pre>
+          <p> <h5>Response Required: </h5>SUCCESS or FAILURE</p>
+          <p> <h5>Brief Description: </h5><br> timeslot : 1:00-2:00pm,3:00-4:00pm<br>meal_time : lunch or dinner<br>menu_id :(comma seprated)<br>
+      pre_time : Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday</p> 
+         
+          <p> <h5>requestKey: </h5>add_menu_by_previous</p>
+          <p> <h5>Sample Response: </h5>
+
+{
+    "status": "SUCCESS",
+    "message": "Menu Added Successfully.",
+    "requestKey": "api/add_menu_by_previous"
+}     </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+
+
+<a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">21) cart_data</span>
+      </a>
+      <div class="accordion-content">
+         <pre> <p>
+              <h5>Parameters: </h5>
+               'token'            => 'required|max:255',
+                'menu_id'     => 'required|max:255',
+                
+          </p>
+          <p> <h5>Response Required: </h5>SUCCESS or FAILURE</p>
+          <p> <h5>Brief Description: </h5><br>menu_id :(comma seprated)</p> 
+         
+          <p> <h5>requestKey: </h5>cart_data</p>
+          <p> <h5>Sample Response: </h5>
+
+{
+    "status": "SUCCESS",
+    "cart_data": [
+        {
+            "id": "4",
+            "user_id": "77",
+            "food_type": "chef",
+            "meal_time": "lunch",
+            "item_name": "test food",
+            "price": "3000",
+            "description": "hello descriptionss",
+            "image": "http://mobulous.in/homefuud/profile_resize/20180327103628284556.jpg",
+            "day": "Monday",
+            "created_at": "2018-03-27 10:36:28",
+            "updated_at": "2018-03-04 10:36:28"
+        },
+        {
+            "id": "3",
+            "user_id": "77",
+            "food_type": "chef",
+            "meal_time": "lunch",
+            "item_name": "test foodss",
+            "price": "3000",
+            "description": "hello descriptionss",
+            "image": "http://mobulous.in/homefuud/profile_resize/20180327072921657398.jpg",
+            "day": "Monday",
+            "created_at": "2018-03-29 07:29:21",
+            "updated_at": "2018-02-12 07:29:21"
+        }
+    ],
+    "message": "Menu Listing.",
+    "requestKey": "api/cart_data"
+}     </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+
+
+
+
+      <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">22) add_cart_data</span>
+      </a>
+      <div class="accordion-content">
+         <pre> <p>
+              <h5>Parameters: </h5>
+              'token'           => 'required|max:255',
+                'menu_id'     => 'required|max:255',
+                'quantity'      => 'required|max:255',
+                'timeslot'      => 'required|max:255',
+                'pre_time'      => 'required|max:255',
+                'meal_time'     => 'required|max:255',
+                'no_of_people'      => 'required|max:255',
+                'host_id'     => 'required|max:255',
+                 'update_id'      => '',
+                
+          </p>
+          <p> <h5>Response Required: </h5>SUCCESS or FAILURE</p>
+          <p> <h5>Brief Description: </h5><br>menu_id :(comma seprated)<br>quantity :(comma seprated)<br> 'update_id'(give id when edit)</p> 
+         
+          <p> <h5>requestKey: </h5>add_cart_data</p>
+          <p> <h5>Sample Response: </h5>
+
+  {
+    "status": "SUCCESS",
+    "add_cart_data": [
+        {
+            "id": "3",
+            "user_id": "77",
+            "food_type": "chef",
+            "meal_time": "lunch",
+            "item_name": "test foodss",
+            "price": "3000",
+            "description": "hello descriptionss",
+            "image": "http://mobulous.in/homefuud/profile_resize/20180327072921657398.jpg",
+            "day": "Monday",
+            "created_at": "2018-03-29 07:29:21",
+            "updated_at": "2018-02-12 07:29:21",
+            "quantity": "2",
+            "total": "6000"
+        },
+        {
+            "id": "4",
+            "user_id": "77",
+            "food_type": "chef",
+            "meal_time": "lunch",
+            "item_name": "test food",
+            "price": "3000",
+            "description": "hello descriptionss",
+            "image": "http://mobulous.in/homefuud/profile_resize/20180327103628284556.jpg",
+            "day": "Monday",
+            "created_at": "2018-03-27 10:36:28",
+            "updated_at": "2018-03-04 10:36:28",
+            "quantity": "3",
+            "total": "9000"
+        }
+    ],
+    "message": "Menu Listing.",
+    "requestKey": "api/add_cart_data"
+}    </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+
+
+
+
+      <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">23) menu_booking</span>
+      </a>
+      <div class="accordion-content">
+         <pre> <p>
+              <h5>Parameters: </h5>
+              'token'               => 'required|max:255',
+                'menu_id'               => 'required|max:255',
+                'quantity'              => 'required|max:255',
+                'host_id'           =>'required|max:255',
+                'no_of_people_lunch'      =>'',
+                'no_of_people_dinner'     =>'',
+                'timeslot_lunch'        =>'',
+                'timeslot_dinner'       =>'',
+                'total_price'         =>'required|max:255',
+          </p>
+          <p> <h5>Response Required: </h5>SUCCESS or FAILURE</p>
+          <p> <h5>Brief Description: </h5><br>menu_id :(comma seprated)<br>quantity :(comma seprated)</p> 
+         
+          <p> <h5>requestKey: </h5>menu_booking</p>
+          <p> <h5>Sample Response: </h5>
+
+  {{
+    "status": "SUCCESS",
+    "message": "Menu Booked Successfully.",
+    "requestKey": "api/menu_booking"
+}   </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+
+
+
+ <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">24) view_cart</span>
+      </a>
+      <div class="accordion-content">
+         <pre> <p>
+              <h5>Parameters: </h5>
+             'token'            => 'required|max:255',
+          </p>
+          <p> <h5>Response Required: </h5>SUCCESS or FAILURE</p>
+       
+          <p> <h5>requestKey: </h5>view_cart</p>
+          <p> <h5>Sample Response: </h5>
+
+{
+    "status": "SUCCESS",
+    "view_cart": [
+        {
+            "id": 3,
+            "user_id": "77",
+            "host_id": "77",
+            "menu_id": "3",
+            "timeslot": "01:00 pm to 02:00 pm",
+            "quantity": "3",
+            "pre_time": "Wednesday",
+            "meal_time": "lunch",
+            "no_of_people": "3",
+            "created_at": "2018-04-04 06:15:09",
+            "updated_at": "2018-03-30 18:46:47",
+            "food_type": "alcarte",
+            "item_name": "test food",
+            "price": "300",
+            "description": "hello description",
+            "image": "20180330184647191905.jpg",
+            "day": "Wednesday",
+            "cart_id": "1"
+        },
+        {
+            "id": 4,
+            "user_id": "77",
+            "host_id": "77",
+            "menu_id": "4",
+            "timeslot": "01:00 pm to 02:00 pm",
+            "quantity": "2",
+            "pre_time": "Wednesday",
+            "meal_time": "lunch",
+            "no_of_people": "3",
+            "created_at": "2018-03-27 10:36:28",
+            "updated_at": "2018-03-04 10:36:28",
+            "food_type": "chef",
+            "item_name": "test food",
+            "price": "3000",
+            "description": "hello descriptionss",
+            "image": "20180327103628284556.jpg",
+            "day": "Wednesday",
+            "cart_id": "2"
+        }
+    ],
+    "message": "Cart data.",
+    "requestKey": "api/view_cart"
+}   </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+
+
+      <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">25) check_cart</span>
+      </a>
+      <div class="accordion-content">
+         <pre> <p>
+              <h5>Parameters: </h5>
+               'token'            => 'required|max:255',
+                 'host_id'            => 'required|max:255',
+
+          </p>
+          <p> <h5>Response Required: </h5>SUCCESS or FAILURE</p>
+         
+          <p> <h5>requestKey: </h5>check_cart</p>
+          <p> <h5>Sample Response: </h5>
+
+  {
+    "status": "SUCCESS",
+    "response": {
+        "status": "NOT"
+    },
+    "message": "Cart Status.",
+    "requestKey": "api/check_cart"
+}  </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+ <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+          <span style="margin-left:50px;line-height: 1.5em;">26) delete_cart</span>
+      </a>
+      <div class="accordion-content">
+         <pre> <p>
+              <h5>Parameters: </h5>
+               'token'            => 'required|max:255',
+               
+          </p>
+          <p> <h5>Response Required: </h5>SUCCESS or FAILURE</p>
+         
+          <p> <h5>requestKey: </h5>delete_cart</p>
+          <p> <h5>Sample Response: </h5>
+
+ {
+    "status": "SUCCESS",
+    "message": "Delete Successfully.",
+    "requestKey": "api/delete_cart"
+}  </pre>
+          </p>
+          <p> <h5>Test Status: </h5></p>
+          <p> <h5>Notes: </h5></p>
+      </div>
+
+
+
+
+
+
+  </div>
+</div>   -->
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      $('.accordion-toggle').on('click', function(event){
+        event.preventDefault();
+
+        // create accordion variables
+        var accordion = $(this);
+        var accordionContent = accordion.next('.accordion-content');
+        var accordionToggleIcon = $(this).children('.toggle-icon');
+
+        // toggle accordion link open class
+        accordion.toggleClass("open");
+
+        // toggle accordion content
+        accordionContent.slideToggle(250);
+
+        // change plus/minus icon
+        if (accordion.hasClass("open")) {
+          accordionToggleIcon.html("<i class='fa fa-minus-circle'></i>");
+        } else {
+          accordionToggleIcon.html("<i class='fa fa-plus-circle'></i>");
+        }
+      });
+    });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      $('ul.nav a').each(function(){
+        if(location.href === this.href){
+          $(this).addClass('active');
+          $('ul.nav a').not(this).removeClass('active');
+          return false;
+        }
+      });
+    });
+    </script>
+</body>
+</html>
