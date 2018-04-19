@@ -246,6 +246,14 @@ module.exports = {
                 if (err) {
                     return res.send({ status: 401, data: err, message: 'Notifications not fetched' });
                 }
+                else if (!data) {
+
+                    var tempData = {
+                        "email": req.body.email,
+                        "notifications": []
+                    }
+                    return res.send({ status: 200, data: tempData, message: 'Notification list fetched' });
+                }
                 return res.send({ status: 200, data: data, message: 'Notification list fetched' });
 
             })
