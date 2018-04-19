@@ -160,7 +160,7 @@ module.exports = {
                 return res.send({status:401, data: err, message: "Style can't be fetch"});
             }
             else if(!data){
-                return res.send({status: 200, data: data, message: "Style doesn't exist!"});
+                return res.send({status: 401, data: data, message: "Style doesn't exist!"});
             }
             return res.send({status: 200, data: data, message: 'Style successfully fetched'});
         })

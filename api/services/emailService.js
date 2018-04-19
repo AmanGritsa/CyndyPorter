@@ -75,7 +75,7 @@ module.exports = {
             if (error) {
                 console.log("error: " + error);
             } else {
-                console.log("pdf sent to " + emailDetails.email);
+              console.log("pdf sent to " + emailDetails.email);
             }
         });
     }

@@ -35,31 +35,28 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
-   'POST /signup': 'UsersController.signup',
-   'POST /login': 'AuthController.login',
-   'GET /getAllUsers': 'UsersController.getAllUsers',
-   'POST /getUserProfile': 'UsersController.getUserProfile',
-   'GET /getStylistList': 'StylistController.getStylistList',
-   'POST /addStylist': 'StylistController.addStylist',
-   'POST /upload': 'StylistController.upload',
-   'POST /uploadImage': 'GalleryController.uploadImage',
-   'POST /uploadUserImage': 'GalleryController.uploadUserImage',
-   'POST /sendPasswordResetLink': 'UsersController.sendPasswordResetLink',
-   'GET /resetPassword/:token': {view: 'changePassword'},
-   'POST /resetPassword/:token': 'UsersController.resetPassword',
-   '/api/services': {
-     view: 'apiDocument'
-   },
+  'POST /signup': 'UsersController.signup',
+  'POST /login': 'AuthController.login',
+  'GET /getAllUsers': 'UsersController.getAllUsers',
+  'POST /getUserProfile': 'UsersController.getUserProfile',
+  'GET /getStylistList': 'StylistController.getStylistList',
+  'POST /addStylist': 'StylistController.addStylist',
+  'POST /upload': 'StylistController.upload',
+  'POST /uploadUserImage': 'GalleryController.uploadUserImage',
+  'POST /sendPasswordResetLink': 'UsersController.sendPasswordResetLink',
+  'GET /resetPassword/:token': { view: 'changePassword' },
+  'POST /resetPassword/:token': 'UsersController.resetPassword',
+  '/api/services': {
+    view: 'apiDocument'
+  },
   //  'POST /getImageByAdmin': 'GalleryController.getImageByAdmin',
-   'POST /logout': 'AuthController.logout',
-   'POST /uploadFile': 'GalleryController.uploadFile',
-   'POST /getUsersToManageImage': 'UsersController.getUsersToManageImage',
-   'POST /updateImageDetails': 'GalleryController.updateImageDetails',
-   'POST /sendDetailsInPDF': 'GalleryController.sendDetailsInPDF',
-   'GET /sendDetailsInPDF': 'UsersController.sendDetailsInPDF',
-   'GET /sendNotificationToUser': 'AuthController.sendNotificationToUser',
-   'POST /getAllNotifications': 'UsersController.getAllNotifications',
-   'POST /getUserStyle': 'GalleryController.getUserStyle'
+  'POST /logout': 'AuthController.logout',
+  'POST /getUsersToManageImage': 'UsersController.getUsersToManageImage',
+  'POST /updateImageDetails': 'GalleryController.updateImageDetails',
+  'POST /sendDetailsInPDF': 'UsersController.sendDetailsInPDF',
+  'GET /sendNotificationToUser': 'AuthController.sendNotificationToUser',
+  'POST /getAllNotifications': 'UsersController.getAllNotifications',
+  'POST /getUserStyle': 'GalleryController.getUserStyle'
 
   /***************************************************************************
   *                                                                          *

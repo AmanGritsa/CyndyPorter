@@ -63,7 +63,7 @@ module.exports = {
 
             try {
                 if (err) {
-                    return res.json(apiResponse.failure(err));
+                    return res.json({ status: err.status, data: err, message: "Email couldn't be sent" });
                 } else {
                     if (result) {
                         var emailDetails = result;
@@ -189,39 +189,44 @@ module.exports = {
     },
 
     sendDetailsInPDF: function (req, res) {
+        var pdf = require('html-pdf');
+        if (!req.body.email || !req.body.styleId) {
+            return res.send({ status: 401, message: 'Email and styleId required!' });
+        }
+        else {
 
-        Gallery.findOne({ email: 'aman1@gmail.com' }).exec(function (err, user) {
-            if (err) {
-                return res.send(err);
-            }
-            else {
-                var pdf = require('html-pdf');
-                var variables = {
-                    user: user
-                };
+            UpdateImage.findOne({ id: req.body.styleId }).exec(function (err, data) {
+                if (err) {
+                    return res.send({ status: 401, message: "Data can't be fetched" });
+                }
+                else {
 
-                ejs.renderFile('./views/pdfFile.ejs', variables, function (err, result) {
-                    // render on success
-                    if (result) {
-                        html = result;
-                        pdf.create(html).toStream(function (err, stream) {
-                            res.contentType("application/pdf");
-                            var user1 = {
-                                email: 'amanniet@gmail.com'
-                            }
-                            emailService.sendPDF(user1, stream);
+                    var variables = {
+                        user: data
+                    };
 
-                            // stream.pipe(fs.createWriteStream('./foo.pdf'));
-                        });
-                    }
-                    // render or error
-                    else {
-                        res.end('An error occurred');
-                        console.log(err);
-                    }
-                });
-            }
-        })
+                    ejs.renderFile('./views/pdfFile.ejs', variables, function (err, result) {
+                        // render on success
+                        if (result) {
+                            html = result;
+                            pdf.create(html).toStream(function (err, stream) {
+                                res.contentType("application/pdf");
+                                var userData = {
+                                    email: req.body.email
+                                }
+                                emailService.sendPDF(userData, stream);
+                                res.send({ status: 200, message: "Congrats your PDF has been sent" });
+
+                            });
+                        }
+                        // render or error
+                        else {
+                            return res.send({ status: 401, data: err, message: "Oops ! Couldn’t send your PDF. Please try again" });
+                        }
+                    });
+                }
+            });
+        }
     },
 
     getAllNotifications: function (req, res) {
@@ -230,10 +235,10 @@ module.exports = {
         }
         else {
             Notification.findOne({ email: req.body.email }).exec(function (err, data) {
-                if(err){
-                    return res.send({status: 401, data: err, message: 'Notifications not fetched'});
+                if (err) {
+                    return res.send({ status: 401, data: err, message: 'Notifications not fetched' });
                 }
-                return res.send({status: 200, data: data, message: 'Notification list fetched'});
+                return res.send({ status: 200, data: data, message: 'Notification list fetched' });
 
             })
         }
