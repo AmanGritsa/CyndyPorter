@@ -37,7 +37,7 @@ module.exports.routes = {
   },
   'POST /signup': 'UsersController.signup',
   'POST /login': 'AuthController.login',
-  'GET /getAllUsers': 'UsersController.getAllUsers',
+  'POST /getAllUsers': 'UsersController.getAllUsers',
   'POST /getUserProfile': 'UsersController.getUserProfile',
   'GET /getStylistList': 'StylistController.getStylistList',
   'POST /addStylist': 'StylistController.addStylist',

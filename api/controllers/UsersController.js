@@ -33,12 +33,20 @@ module.exports = {
     },
 
     getAllUsers: function (req, res) {
-        Users.find().exec(function (err, users) {
-            if (err) {
-                return res.send({ status: err.status, data: err, message: 'User List Not Fetched' });
-            }
-            return res.send({ status: 200, data: users, message: 'User List Fetched Successfully' });
-        })
+
+        var userType = req.param('userType');
+        if (!userType) {
+            return res.send({ status: 401, message: 'please provide user type' });
+        }
+        if (userType == 'admin') {
+
+            Users.find({ userType: 'user' }).exec(function (err, users) {
+                if (err) {
+                    return res.send({ status: err.status, data: err, message: 'User List Not Fetched' });
+                }
+                return res.send({ status: 200, data: users, message: 'User List Fetched Successfully' });
+            })
+        }
     },
 
     getUserProfile: function (req, res) {
