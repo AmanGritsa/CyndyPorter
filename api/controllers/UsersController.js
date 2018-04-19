@@ -188,7 +188,7 @@ module.exports = {
 
     },
 
-    sendPDF: function (req, res) {
+    sendDetailsInPDF: function (req, res) {
 
         Gallery.findOne({ email: 'aman1@gmail.com' }).exec(function (err, user) {
             if (err) {

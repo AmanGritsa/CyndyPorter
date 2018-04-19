@@ -62,7 +62,7 @@ module.exports.policies = {
   'StylistController': {
     'getStylistList': true
   },
-  'GalleryController': {
-    '*': true
-  }
+  // 'GalleryController': {
+  //   '*': true
+  // }
 };

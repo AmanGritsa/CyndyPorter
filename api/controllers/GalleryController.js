@@ -14,8 +14,9 @@ var localStorage = new LocalStorage('./scratch');
 module.exports = {
 
     uploadUserImage: function (req, res) {
-        var file = req.file('image');
         var email = req.param('email');
+        var file = req.file('image');
+       
         if (!email) {
             return res.send({ status: 401, message: 'Email and Image are mandatory' });
         }
@@ -148,5 +149,21 @@ module.exports = {
             }
         });
     },
+
+    getUserStyle: function(req, res){
+        var styleId= req.param('styleId');
+        if(!styleId){
+            return res.send({status:401, message: "Please enter styleId"});
+        }
+        UpdateImage.findOne({id: styleId, isUpdated: 1}).exec(function(err, data){
+            if(err){
+                return res.send({status:401, data: err, message: "Style can't be fetch"});
+            }
+            else if(!data){
+                return res.send({status: 200, data: data, message: "Style doesn't exist!"});
+            }
+            return res.send({status: 200, data: data, message: 'Style successfully fetched'});
+        })
+    }
 
 };

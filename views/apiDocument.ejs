@@ -762,6 +762,49 @@ token
 
 <!-- *************************Get Notification List*********************************************** --> 
 
+<!-- *************************Get Image By User*********************************************** --> 
+<a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+    <span style="margin-left:50px;line-height: 1.5em;">14) Get Style By User</span>
+</a> 
+<div class="accordion-content">
+    <p>
+        <h5>Parameters: </h5>
+        <pre>
+'styleId'        => 'required|max:255',
+'token' => 'required'
+          </pre>
+    </p>
+    <p> <h5>Response Required: </h5>Status Code (ex: 200, 401)</p>
+    <p> <h5>Brief Description: </h5>token (ex: Mobulous eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNTIzMDA2ODU3fQ.dvLq8ifMcMQHTynI8fJFpSTrrcfu338cW2WPoraXeUs)</p>
+    <p> <h5>requestKey: </h5>getUserStyle</p>
+<p> <h5>method: </h5>POST</p>
+    <p> <h5>Sample Response: </h5>
+<pre>
+    {
+        "status": 200,
+        "data": {
+            "image": {
+                "email": "akamahesh1@gmail.com",
+                "id": "5ad841cc2bd82b22a669d63b",
+                "imageUrl": "http://ec2-18-217-140-4.us-east-2.compute.amazonaws.com/images/15241220604208202.jpg"
+            },
+            "colors": {},
+            "isUpdated": 1,
+            "createdAt": "2018-04-19T07:14:20.700Z",
+            "updatedAt": "2018-04-19T07:14:31.804Z",
+            "id": "5ad841cc2bd82b22a669d63c"
+        },
+        "message": "Style successfully fetched"
+    }
+      </pre>
+    </p>
+    <p> <h5>Test Status: </h5></p>
+    <p> <h5>Notes: </h5></p>
+</div>
+
+
+<!-- *************************Get Notification List*********************************************** --> 
+
 
 
 
