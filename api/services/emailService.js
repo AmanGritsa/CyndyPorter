@@ -1,8 +1,8 @@
 var nodemailer = require('nodemailer');
 var config = require('../../config/config.js');
-// var smtpTransport = require("nodemailer-smtp-transport");
+var smtpTransport = require("nodemailer-smtp-transport");
 
-var smtpTransporter = nodemailer.createTransport({
+var smtpTransporter = nodemailer.createTransport(smtpTransport({
     host: config.mailConfig.smtpHost,
     secureConnection: config.mailConfig.secureConnection,
     port: config.mailConfig.smtpPort,
@@ -10,7 +10,7 @@ var smtpTransporter = nodemailer.createTransport({
         user: config.mailConfig.username,
         pass: config.mailConfig.password
     }
-});
+}));
 
 module.exports = {
 
