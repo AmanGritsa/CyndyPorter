@@ -4,9 +4,9 @@
  * @description :: Server-side logic for managing users
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
-var bcrypt = require('bcrypt')
-var ejs = require('ejs')
-var pdf = require('html-pdf')
+var bcrypt = require('bcrypt');
+var ejs = require('ejs');
+var pdf = require('html-pdf');
 module.exports = {
     signup: function (req, res) {
         Users.findOne({ email: req.body.email }).exec(function (err, data) {
@@ -197,7 +197,6 @@ module.exports = {
     },
 
     sendDetailsInPDF: function (req, res) {
-        var pdf = require('html-pdf');
         if (!req.body.email || !req.body.styleId) {
             return res.send({ status: 401, message: 'Email and styleId required!' });
         }
@@ -205,7 +204,7 @@ module.exports = {
 
             UpdateImage.findOne({ id: req.body.styleId }).exec(function (err, data) {
                 if (err) {
-                    return res.send({ status: 401, message: "Data can't be fetched" });
+                    return res.send({ status: 401, data: err, message: "Data can't be fetched" });
                 }
                 else {
 
@@ -218,7 +217,7 @@ module.exports = {
                         if (result) {
                             html = result;
                             pdf.create(html).toStream(function (err, stream) {
-                                res.contentType("application/pdf");
+                                // res.contentType("application/pdf");
                                 var userData = {
                                     email: req.body.email
                                 }
@@ -259,6 +258,45 @@ module.exports = {
             })
         }
 
-    }
+    },
+
+    downloadPdfReport: function (req, res) {
+        if (!req.body.styleId) {
+            return res.send({ status: 401, message: 'StyleId required!' });
+        }
+        else {
+            UpdateImage.findOne({ id: req.body.styleId }).exec(function (err, data) {
+                if (err) {
+                    return res.send({ status: 401, data: err, message: "Data can't be fetched" });
+                }
+                else {
+
+                    var variables = {
+                        user: data
+                    };
+
+                    ejs.renderFile('./views/downloadPDF.ejs', variables, function (err, result) {
+                        // render on success
+                        if (result) {
+                            html = result;
+                            pdf.create(html).toStream(function (err, stream) {
+                                res.contentType("application/pdf");
+                                // var userData = {
+                                //     email: req.body.email
+                                // }
+                                // emailService.sendPDF(userData, stream);
+                                res.send({ status: 200, message: "Congrats your PDF has been sent" });
+
+                            });
+                        }
+                        // render or error
+                        else {
+                            return res.send({ status: 401, data: err, message: "Oops ! Couldn’t send your PDF. Please try again" });
+                        }
+                    });
+                }
+            });
+        }
+    },
 
 };
