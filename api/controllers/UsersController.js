@@ -229,7 +229,7 @@ module.exports = {
                         user: data
                     };
 
-                    ejs.renderFile('./views/pdfFile.ejs', variables, function (err, result) {
+                    ejs.renderFile('views/pdfFile.ejs', variables, function (err, result) {
                         // render on success
                         if (result) {
                             html = result;
