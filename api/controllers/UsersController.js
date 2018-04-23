@@ -218,7 +218,7 @@ module.exports = {
     sendDetailsInPDF: function (req, res) {
 
 
-        
+
         if (!req.body.email || !req.body.styleId) {
             return res.send({ status: 401, message: 'Email and styleId required!' });
         }
@@ -229,32 +229,32 @@ module.exports = {
                     return res.send({ status: 401, data: err, message: "Data can't be fetched" });
                 }
                 else {
-
                     var variables = {
                         user: data
                     };
 
                     ejs.renderFile('./views/pdfFile.ejs', variables, function (err, result) {
-                     
+
                         // render on success
                         if (result) {
                             var html = result;
-                            // var options = { format: 'Letter', type: 'pdf' };
-                            pdf.create(html).toBuffer(function (err, stream) {
-                                if(err){
+
+                            pdf.create(html).toBuffer(function (err, buffer) {
+                                if (err) {
                                     return res.send(err);
                                 }
+                                // return res.send(buffer);
                                 var userData = {
                                     email: req.body.email
                                 }
-
-                                // var attch = new Mailgun.Attachment({data: stream, filename: 'myattach.pdf'});
-                                emailService.sendPDF(userData, stream);
-                                res.send({ status: 200, message: "Congrats your PDF has been sent" });
-
-                            });
+                                emailService.sendPDF(userData, buffer);
+                                // console.log('This is a buffer:', Buffer.isBuffer(buffer));
+                            })
 
                             // pdf.create(html).toStream(function (err, stream) {
+                            //     if (err) {
+                            //         return res.send(err);
+                            //     }
                             //     var userData = {
                             //         email: req.body.email
                             //     }
