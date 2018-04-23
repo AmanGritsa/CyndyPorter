@@ -46,7 +46,7 @@ module.exports = {
             }
         });
     },
-    passwordResetConfirmation: function(emailDetails){
+    passwordResetConfirmation: function (emailDetails) {
         var data = {
             to: emailDetails.email,
             subject: 'Password Reset Confirmation',
@@ -61,7 +61,7 @@ module.exports = {
         });
     },
 
-    sendPDF: function(emailDetails, doc){
+    sendPDF: function (emailDetails, doc) {
         var data = {
             to: emailDetails.email,
             subject: 'Your Image Details',
@@ -69,16 +69,16 @@ module.exports = {
             attachments: [{
                 filename: 'attachment.pdf',
                 content: doc,
-              }],
+            }],
         }
         smtpTransporter.sendMail(data, function (error, response) {
             if (error) {
                 console.log("error: " + error);
             } else {
-              console.log("pdf sent to " + emailDetails.email);
+                console.log("pdf sent to " + emailDetails.email);
             }
         });
     }
 
-    
+
 }

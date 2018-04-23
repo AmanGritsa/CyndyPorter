@@ -7,6 +7,8 @@
 var bcrypt = require('bcrypt');
 var ejs = require('ejs');
 var pdf = require('html-pdf');
+
+var Mailgun = require('mailgun-js');
 module.exports = {
     signup: function (req, res) {
         Users.findOne({ email: req.body.email }).exec(function (err, data) {
@@ -214,6 +216,9 @@ module.exports = {
     },
 
     sendDetailsInPDF: function (req, res) {
+
+
+        
         if (!req.body.email || !req.body.styleId) {
             return res.send({ status: 401, message: 'Email and styleId required!' });
         }
@@ -233,16 +238,30 @@ module.exports = {
                      
                         // render on success
                         if (result) {
-
-                            var options = { format: 'Letter', type: 'pdf' };
-                            pdf.create(result, options).toStream(function (err, stream) {
+                            var html = result;
+                            // var options = { format: 'Letter', type: 'pdf' };
+                            pdf.create(html).toBuffer(function (err, stream) {
+                                if(err){
+                                    return res.send(err);
+                                }
                                 var userData = {
                                     email: req.body.email
                                 }
+
+                                // var attch = new Mailgun.Attachment({data: stream, filename: 'myattach.pdf'});
                                 emailService.sendPDF(userData, stream);
                                 res.send({ status: 200, message: "Congrats your PDF has been sent" });
 
                             });
+
+                            // pdf.create(html).toStream(function (err, stream) {
+                            //     var userData = {
+                            //         email: req.body.email
+                            //     }
+                            //     emailService.sendPDF(userData, stream);
+                            //     res.send({ status: 200, message: "Congrats your PDF has been sent" });
+
+                            // });
                         }
                         // render or error
                         else {
