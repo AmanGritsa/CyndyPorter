@@ -229,12 +229,13 @@ module.exports = {
                         user: data
                     };
 
-                    ejs.renderFile('views/pdfFile.ejs', variables, function (err, result) {
+                    ejs.renderFile('./views/pdfFile.ejs', variables, function (err, result) {
+                     
                         // render on success
                         if (result) {
-                            html = result;
-                            pdf.create(html).toStream(function (err, stream) {
-                                // res.contentType("application/pdf");
+
+                            var options = { format: 'Letter', type: 'pdf' };
+                            pdf.create(result, options).toStream(function (err, stream) {
                                 var userData = {
                                     email: req.body.email
                                 }

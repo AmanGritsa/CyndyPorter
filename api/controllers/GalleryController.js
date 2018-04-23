@@ -82,7 +82,12 @@ module.exports = {
                 var payload = [{
                     'notification': {
                         'title': 'Congratulations',
-                        'body': 'Your image has been styled by Cyndy Porter'
+                        'body': 'Your image has been styled by Cyndy Porter',
+                        'sound': 'default',
+                        'icon': 'ic_notification',
+                        'color': '#e28d4f',
+                        'show_in_foreground': true
+
                     },
                     'data': {
                         'styleId': result[0].id,
