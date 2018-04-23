@@ -239,29 +239,17 @@ module.exports = {
                         if (result) {
                             var html = result;
 
-                            pdf.create(html).toBuffer(function (err, buffer) {
+                            pdf.create(html).toStream(function (err, stream) {
                                 if (err) {
                                     return res.send(err);
                                 }
-                                // return res.send(buffer);
                                 var userData = {
                                     email: req.body.email
                                 }
-                                emailService.sendPDF(userData, buffer);
-                                // console.log('This is a buffer:', Buffer.isBuffer(buffer));
-                            })
+                                emailService.sendPDF(userData, stream);
+                                res.send({ status: 200, message: "Congrats your PDF has been sent" });
 
-                            // pdf.create(html).toStream(function (err, stream) {
-                            //     if (err) {
-                            //         return res.send(err);
-                            //     }
-                            //     var userData = {
-                            //         email: req.body.email
-                            //     }
-                            //     emailService.sendPDF(userData, stream);
-                            //     res.send({ status: 200, message: "Congrats your PDF has been sent" });
-
-                            // });
+                            });
                         }
                         // render or error
                         else {
