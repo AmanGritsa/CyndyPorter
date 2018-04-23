@@ -247,7 +247,7 @@ module.exports = {
                                     email: req.body.email
                                 }
                                 emailService.sendPDF(userData, stream);
-                                res.send({ status: 200, message: "Congrats your PDF has been sent" });
+                                return res.send({ status: 200, message: "Congrats your PDF has been sent" });
 
                             });
                         }
