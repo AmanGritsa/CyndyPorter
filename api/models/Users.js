@@ -35,6 +35,10 @@ module.exports = {
       required: 'true',
       maxLength: 255
     },
+    imageUrl: {
+      type: 'string'
+    },
+
     stylistName: {
       type: 'string',
       required: 'true',

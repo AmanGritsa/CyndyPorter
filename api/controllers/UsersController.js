@@ -17,16 +17,33 @@ module.exports = {
                 return res.json({ status: 401, message: 'Email already exist!' });
             }
             else {
-                Users.create(req.body).exec(function (err, user) {
+                var file = req.file('image');
+                var timestamp = new Date().getTime();
+                var randomNumber = Math.floor(Math.random() * 9999);
+                var fileName = timestamp + '' + randomNumber + '.jpg';
+                var path = '../../assets/images/profile/';
+
+                file.upload({ dirname: path, saveAs: fileName, maxBytes: 1 * 1024 * 1024 }, function (err, data) {
                     if (err) {
-                        return res.json({ status: err.status, data: err, message: 'Signup Failed' });
+                        return res.send({ status: err.status, data: err, message: 'Image upload failed' });
                     }
-                    // If user created successfuly we return user as response
-                    if (user) {
-                        user.token = jwToken.issue({ id: user.id });
-                        res.json({ status: 200, data: user, message: 'Signup Successfully' });
+                    if (data.length == 0) {
+                        req.body.imageUrl = "";
                     }
-                });
+                    else {
+                        req.body.imageUrl = req.protocol + '://' + req.get('host') + '/images/profile/' + fileName;
+                    }
+
+                    Users.create(req.body).exec(function (err, user) {
+                        if (err) {
+                            return res.json({ status: err.status, data: err, message: 'Signup Failed' });
+                        }
+                        if (user) {
+                            user.token = jwToken.issue({ id: user.id });
+                            res.json({ status: 200, data: user, message: 'Signup Successfully' });
+                        }
+                    });
+                })
             }
 
         });
@@ -258,45 +275,6 @@ module.exports = {
             })
         }
 
-    },
-
-    downloadPdfReport: function (req, res) {
-        if (!req.body.styleId) {
-            return res.send({ status: 401, message: 'StyleId required!' });
-        }
-        else {
-            UpdateImage.findOne({ id: req.body.styleId }).exec(function (err, data) {
-                if (err) {
-                    return res.send({ status: 401, data: err, message: "Data can't be fetched" });
-                }
-                else {
-
-                    var variables = {
-                        user: data
-                    };
-
-                    ejs.renderFile('./views/downloadPDF.ejs', variables, function (err, result) {
-                        // render on success
-                        if (result) {
-                            html = result;
-                            pdf.create(html).toStream(function (err, stream) {
-                                res.contentType("application/pdf");
-                                // var userData = {
-                                //     email: req.body.email
-                                // }
-                                // emailService.sendPDF(userData, stream);
-                                res.send({ status: 200, message: "Congrats your PDF has been sent" });
-
-                            });
-                        }
-                        // render or error
-                        else {
-                            return res.send({ status: 401, data: err, message: "Oops ! Couldn’t send your PDF. Please try again" });
-                        }
-                    });
-                }
-            });
-        }
     },
 
 };

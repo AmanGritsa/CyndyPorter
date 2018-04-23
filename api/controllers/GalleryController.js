@@ -16,7 +16,7 @@ module.exports = {
     uploadUserImage: function (req, res) {
         var email = req.param('email');
         var file = req.file('image');
-       
+
         if (!email) {
             return res.send({ status: 401, message: 'Email and Image are mandatory' });
         }
@@ -67,33 +67,6 @@ module.exports = {
 
     },
 
-    // getImageByAdmin: function (req, res) {
-
-    //     if (!req.body.imageId) {
-    //         return res.send('please provide imageId');
-    //     }
-    //     UpdateImage.find().exec(function (err, result) {
-    //         if (err) {
-    //             return res.send(err);
-    //         }
-    //         else if (!result) {
-    //             return res.send('image not available');
-    //         }
-    //         else {
-    //             var imageData = result.filter(function (json) {
-    //                 if (json.image.id == req.body.imageId) {
-    //                     return json;
-    //                 }
-    //             });
-    //             if (imageData.length == 0) {
-    //                 return res.send('image not available');
-    //             }
-    //             return res.send(imageData);
-    //         }
-
-    //     })
-    // }
-
     updateImageDetails: function (req, res) {
 
         if (!req.body.styleId || !req.body.colors || !req.body.email) {
@@ -113,7 +86,8 @@ module.exports = {
                     },
                     'data': {
                         'styleId': result[0].id,
-                        'imageUrl': result[0].image.imageUrl
+                        'imageUrl': result[0].image.imageUrl,
+                        'time': currentTime.toString()
                     }
                 }];
 
@@ -150,19 +124,19 @@ module.exports = {
         });
     },
 
-    getUserStyle: function(req, res){
-        var styleId= req.param('styleId');
-        if(!styleId){
-            return res.send({status:401, message: "Please enter styleId"});
+    getUserStyle: function (req, res) {
+        var styleId = req.param('styleId');
+        if (!styleId) {
+            return res.send({ status: 401, message: "Please enter styleId" });
         }
-        UpdateImage.findOne({id: styleId, isUpdated: 1}).exec(function(err, data){
-            if(err){
-                return res.send({status:401, data: err, message: "Style can't be fetch"});
+        UpdateImage.findOne({ id: styleId, isUpdated: 1 }).exec(function (err, data) {
+            if (err) {
+                return res.send({ status: 401, data: err, message: "Style can't be fetch" });
             }
-            else if(!data){
-                return res.send({status: 401, data: data, message: "Style doesn't exist!"});
+            else if (!data) {
+                return res.send({ status: 401, data: data, message: "Style doesn't exist!" });
             }
-            return res.send({status: 200, data: data, message: 'Style successfully fetched'});
+            return res.send({ status: 200, data: data, message: 'Style successfully fetched' });
         })
     }
 
