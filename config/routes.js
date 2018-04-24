@@ -50,14 +50,14 @@ module.exports.routes = {
     view: 'apiDocument'
   },
   //  'POST /getImageByAdmin': 'GalleryController.getImageByAdmin',
-  'POST /logout': 'AuthController.logout',
-  'POST /getUsersToManageImage': 'UsersController.getUsersToManageImage',
-  'POST /updateImageDetails': 'GalleryController.updateImageDetails',
-  'POST /sendDetailsInPDF': 'UsersController.sendDetailsInPDF',
-  'GET /sendNotificationToUser': 'AuthController.sendNotificationToUser',
-  'POST /getAllNotifications': 'UsersController.getAllNotifications',
-  'POST /getUserStyle': 'GalleryController.getUserStyle',
-  'POST /downloadPdfReport': 'UsersController.downloadPdfReport'
+  'POST /api/logout': 'AuthController.logout',
+  'POST /api/getUsersToManageImage': 'UsersController.getUsersToManageImage',
+  'POST /api/updateImageDetails': 'GalleryController.updateImageDetails',
+  'POST /api/sendDetailsInPDF': 'UsersController.sendDetailsInPDF',
+  'GET /api/sendNotificationToUser': 'AuthController.sendNotificationToUser',
+  'POST /api/getAllNotifications': 'UsersController.getAllNotifications',
+  'POST /api/getUserStyle': 'GalleryController.getUserStyle',
+  'POST /api/downloadPdfReport': 'UsersController.downloadPdfReport'
 
   /***************************************************************************
   *                                                                          *
