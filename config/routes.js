@@ -35,7 +35,7 @@ module.exports.routes = {
   '/api': {
     view: 'homepage'
   },
-  'POST api//signup': 'UsersController.signup',
+  'POST /api/signup': 'UsersController.signup',
   'POST /api/login': 'AuthController.login',
   'POST /api/getAllUsers': 'UsersController.getAllUsers',
   'POST /api/getUserProfile': 'UsersController.getUserProfile',
