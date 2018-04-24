@@ -32,20 +32,20 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
+  '/api': {
     view: 'homepage'
   },
-  'POST /signup': 'UsersController.signup',
-  'POST /login': 'AuthController.login',
-  'POST /getAllUsers': 'UsersController.getAllUsers',
-  'POST /getUserProfile': 'UsersController.getUserProfile',
-  'GET /getStylistList': 'StylistController.getStylistList',
-  'POST /addStylist': 'StylistController.addStylist',
-  'POST /upload': 'StylistController.upload',
-  'POST /uploadUserImage': 'GalleryController.uploadUserImage',
-  'POST /sendPasswordResetLink': 'UsersController.sendPasswordResetLink',
-  'GET /resetPassword/:token': { view: 'changePassword' },
-  'POST /resetPassword/:token': 'UsersController.resetPassword',
+  'POST api//signup': 'UsersController.signup',
+  'POST /api/login': 'AuthController.login',
+  'POST /api/getAllUsers': 'UsersController.getAllUsers',
+  'POST /api/getUserProfile': 'UsersController.getUserProfile',
+  'GET /api/getStylistList': 'StylistController.getStylistList',
+  'POST /api/addStylist': 'StylistController.addStylist',
+  'POST /api/upload': 'StylistController.upload',
+  'POST /api/uploadUserImage': 'GalleryController.uploadUserImage',
+  'POST /api/sendPasswordResetLink': 'UsersController.sendPasswordResetLink',
+  'GET /api/resetPassword/:token': { view: 'changePassword' },
+  'POST /api/resetPassword/:token': 'UsersController.resetPassword',
   '/api/services': {
     view: 'apiDocument'
   },
