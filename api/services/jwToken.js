@@ -4,25 +4,25 @@
  * @description :: JSON Webtoken Service for sails
  * @help        :: See https://github.com/auth0/node-jsonwebtoken & http://sailsjs.org/#!/documentation/concepts/Services
  */
- 
+
 var
   jwt = require('jsonwebtoken'),
   tokenSecret = "secretissecet";
 
 // Generates a token from supplied payload
-module.exports.issue = function(payload) {
+module.exports.issue = function (payload) {
   return jwt.sign(
     payload,
     tokenSecret, // Token Secret that we sign it with
-    // {
-    //   // expiresInMinutes : 180 // Token Expire time
-    //   expiresIn : 60*1
-    // }
+    {
+      // expiresInMinutes : 180 // Token Expire time
+      expiresIn: '2d'
+    }
   );
 };
 
 // Verifies token on a request
-module.exports.verify = function(token, callback) {
+module.exports.verify = function (token, callback) {
   return jwt.verify(
     token, // The token to be verified
     tokenSecret, // Same token we used to sign

@@ -10,17 +10,6 @@ module.exports = {
     schema: true,
     attributes: {
 
-        //   imageId: {
-        //     type: 'string',
-        //     required: true
-        //   },
-        //   email: {
-        //     type: 'email',
-        //     required: true
-        //   },
-        //   imageUrl: {
-
-        //   }
         image: {
             required: true
         },

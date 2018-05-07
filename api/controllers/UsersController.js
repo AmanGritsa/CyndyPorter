@@ -6,7 +6,22 @@
  */
 var bcrypt = require('bcrypt');
 var ejs = require('ejs');
+var fs = require('fs');
 var pdf = require('html-pdf');
+var Promise = require('es6-promise').Promise;
+var sendPdfAsync = function (html) {
+    return new Promise(function (success, fail) {
+        pdf.create(html).toStream(function (err, stream) {
+            if (err) {
+                fail(err);
+            }
+            else {
+                success(stream);
+            }
+        })
+    })
+}
+
 
 var Mailgun = require('mailgun-js');
 module.exports = {
@@ -65,6 +80,9 @@ module.exports = {
                 }
                 return res.send({ status: 200, data: users, message: 'User List Fetched Successfully' });
             })
+        }
+        else {
+            return res.send({ status: 401, message: 'You are not authorised to access' });
         }
     },
 
@@ -159,7 +177,66 @@ module.exports = {
         })
     },
 
-    getUsersToManageImage: function (req, res) {
+    getCompleteRequest: function (req, res) {
+
+        var userType = req.param('userType');
+        if (!userType) {
+            return res.send({ status: 401, message: 'please provide user type' });
+        }
+        if (userType == 'admin') {
+            Users.find({ userType: 'user' }).exec(function (err, users) {
+                if (err) {
+                    return res.send({ status: err.status, data: err, message: 'users not fetched' });
+                }
+                else {
+                    var userList = [];
+                    UpdateImage.find({ isUpdated: 1 }).exec(function (err, imageData) {
+
+                        if (err) {
+                            return res.send({ status: err.status, data: err, message: 'users not found' });
+                        }
+                        else {
+
+                            imageData.filter(function (imageJson) {
+                                users.filter(function (userJson) {
+                                    if (imageJson.image.email == userJson.email) {
+
+                                        function UsersList() {
+                                            return {
+                                                'id': userJson.id,
+                                                'email': userJson.email,
+                                                'userName': userJson.userName,
+                                                'stylistName': userJson.stylistName,
+                                                'phoneNumber': userJson.phoneNumber,
+                                                'imageId': imageJson.image.id,
+                                                'imageUrl': imageJson.image.imageUrl,
+                                                'styleId': imageJson.id,
+                                                'deviceToken': userJson.deviceToken,
+                                                'deviceType': userJson.deviceType,
+                                                'uploadAt': imageJson.createdAt,
+                                                'updateAt': imageJson.updatedAt
+                                            };
+                                        };
+                                        var s = UsersList();
+                                        userList.push(s);
+                                    }
+                                });
+                            });
+                            userList.reverse();
+                            return res.send({ status: 200, data: userList, message: 'Users Fetched Successfully' });
+                        }
+                    });
+                }
+
+            });
+        }
+        else {
+            return res.send({ status: 401, message: 'You are not authorised' });
+        }
+
+    },
+
+    getPendingRequest: function (req, res) {
 
         var userType = req.param('userType');
         if (!userType) {
@@ -194,7 +271,9 @@ module.exports = {
                                                 'imageUrl': imageJson.image.imageUrl,
                                                 'styleId': imageJson.id,
                                                 'deviceToken': userJson.deviceToken,
-                                                'deviceType': userJson.deviceType
+                                                'deviceType': userJson.deviceType,
+                                                'uploadAt': imageJson.createdAt,
+                                                'updateAt': imageJson.updatedAt
                                             };
                                         };
                                         var s = UsersList();
@@ -202,6 +281,7 @@ module.exports = {
                                     }
                                 });
                             });
+                            userList.reverse();
                             return res.send({ status: 200, data: userList, message: 'Users Fetched Successfully' });
                         }
                     });
@@ -217,8 +297,6 @@ module.exports = {
 
     sendDetailsInPDF: function (req, res) {
 
-
-
         if (!req.body.email || !req.body.styleId) {
             return res.send({ status: 401, message: 'Email and styleId required!' });
         }
@@ -228,34 +306,102 @@ module.exports = {
                 if (err) {
                     return res.send({ status: 401, data: err, message: "Data can't be fetched" });
                 }
+                else if (!data) {
+                    return res.send({ status: 401, message: "StyleId doesn't exit" });
+                }
                 else {
-                    var variables = {
-                        user: data
-                    };
+                    var userEmail = data.image.email;
+                    Users.findOne({ email: userEmail }).exec(function (err, userData) {
+                        if (err) {
+                            return res.send({ status: 401, data: err, message: "User doesn't exist" });
+                        }
+                        else {
+                            data.userDetails = userData;
+                            var variables = {
+                                user: data
+                            };
+                            ejs.renderFile('./views/test.ejs', variables, function (err, result) {
 
-                    ejs.renderFile('./views/pdfFile.ejs', variables, function (err, result) {
+                                // render on success
+                                if (result) {
+                                    var html = result;
+                                    var userData = {
+                                        email: req.body.email
+                                    }
+                                    sendPdfAsync(html).then(function (stream) {
+                                        emailService.sendPDF(userData, stream);
+                                        return res.send({ status: 200, message: "Congrats your PDF has been sent" });
+                                    }).catch(function (error) {
+                                        return res.send({ status: error.status, data: error, message: '"Oops ! Couldn’t send your PDF. Please try again"' })
+                                        console.error(error);
+                                    });
 
-                        // render on success
-                        if (result) {
-                            var html = result;
-
-                            pdf.create(html).toStream(function (err, stream) {
-                                if (err) {
-                                    return res.send(err);
                                 }
-                                var userData = {
-                                    email: req.body.email
+                                // render or error
+                                else {
+                                    return res.send({ status: 401, data: err, message: "Oops ! Couldn’t send your PDF. Please try again" });
                                 }
-                                emailService.sendPDF(userData, stream);
-                                return res.send({ status: 200, message: "Congrats your PDF has been sent" });
-
                             });
                         }
-                        // render or error
-                        else {
-                            return res.send({ status: 401, data: err, message: "Oops ! Couldn’t send your PDF. Please try again" });
+                    })
+
+
+                }
+            });
+        }
+    },
+
+    downloadDetailsInPdf: function (req, res) {
+
+        if (!req.body.styleId) {
+            return res.send({ status: 401, message: 'StyleId required!' });
+        }
+        else {
+
+            UpdateImage.findOne({ id: req.body.styleId }).exec(function (err, data) {
+                if (err) {
+                    return res.send({ status: 401, data: err, message: "Data can't be fetched" });
+                }
+                else if (!data) {
+                    return res.send({ status: 401, message: "StyleId doesn't exit" });
+                }
+                else {
+                    var userEmail = data.image.email;
+                    Users.findOne({ email: userEmail }).exec(function (err, userData) {
+                        if (err) {
+                            return res.send({ status: 401, data: err, message: "User doesn't exist" });
                         }
-                    });
+                        else {
+                            data.userDetails = userData;
+                            var variables = {
+                                user: data
+                            };
+                            ejs.renderFile('./views/pdfFile.ejs', variables, function (err, result) {
+
+                                // render on success
+                                if (result) {
+                                    var html = result;
+                                    var userData = {
+                                        email: req.body.email
+                                    }
+                                    sendPdfAsync(html).then(function (stream) {
+                                        stream.pipe(fs.createWriteStream('./foo.pdf'));
+                                        return res.send({ status: 200, data: stream, message: "Congrats your PDF has been sent" });
+                                    }).catch(function (error) {
+                                        return res.send({ status: error.status, data: error, message: '"Oops ! Couldn’t send your PDF. Please try again"' })
+                                        console.error(error);
+                                    });
+
+                                }
+                                // render or error
+                                else {
+                                    return res.send({ status: 401, data: err, message: "Oops ! Couldn’t send your PDF. Please try again" });
+                                }
+                            });
+                        }
+                    })
+
+
                 }
             });
         }
@@ -278,8 +424,8 @@ module.exports = {
                     }
                     return res.send({ status: 200, data: tempData, message: 'Notification list fetched' });
                 }
+                data.notifications.reverse();
                 return res.send({ status: 200, data: data, message: 'Notification list fetched' });
-
             })
         }
 

@@ -41,7 +41,6 @@ module.exports.routes = {
   'POST /api/getUserProfile': 'UsersController.getUserProfile',
   'GET /api/getStylistList': 'StylistController.getStylistList',
   'POST /api/addStylist': 'StylistController.addStylist',
-  'POST /api/upload': 'StylistController.upload',
   'POST /api/uploadUserImage': 'GalleryController.uploadUserImage',
   'POST /api/sendPasswordResetLink': 'UsersController.sendPasswordResetLink',
   'GET /api/resetPassword/:token': { view: 'changePassword' },
@@ -49,15 +48,22 @@ module.exports.routes = {
   '/api/services': {
     view: 'apiDocument'
   },
-  //  'POST /getImageByAdmin': 'GalleryController.getImageByAdmin',
   'POST /api/logout': 'AuthController.logout',
-  'POST /api/getUsersToManageImage': 'UsersController.getUsersToManageImage',
+  'POST /api/getCompleteRequest': 'UsersController.getCompleteRequest',
+  'POST /api/getPendingRequest': 'UsersController.getPendingRequest',
   'POST /api/updateImageDetails': 'GalleryController.updateImageDetails',
   'POST /api/sendDetailsInPDF': 'UsersController.sendDetailsInPDF',
   'GET /api/sendNotificationToUser': 'AuthController.sendNotificationToUser',
   'POST /api/getAllNotifications': 'UsersController.getAllNotifications',
   'POST /api/getUserStyle': 'GalleryController.getUserStyle',
-  'POST /api/downloadPdfReport': 'UsersController.downloadPdfReport'
+  'POST /api/getLatestUserStyle': 'GalleryController.getLatestUserStyle',
+  'POST /api/getStyleListById': 'GalleryController.getStyleListById',
+  'DELETE /api/deleteStylist': 'StylistController.deleteStylist',
+  'DELETE /api/deleteRequest': 'GalleryController.deleteRequest',
+  'POST /api/downloadDetailsInPdf': 'UsersController.downloadDetailsInPdf',
+  'POST /api/sendMessageToUser': 'GalleryController.sendMessageToUser',
+  'GET /api/terms&conditions': { view: 'termsAndConditions' },
+  'GET /api/privacyPolicy': { view: 'privacyPolicy' }
 
   /***************************************************************************
   *                                                                          *

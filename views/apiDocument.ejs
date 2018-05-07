@@ -560,7 +560,7 @@ token
 
 
 
-<!-- *************************Get Users on Dashboard*********************************************** --> 
+<!-- *************************Get Pending Request on Dashboard*********************************************** --> 
 <a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
     <span style="margin-left:50px;line-height: 1.5em;">10) Get Users List on Dashboard (Admin)</span>
 </a> 
@@ -804,8 +804,157 @@ token
 </div>
 
 
-<!-- *************************Get Notification List*********************************************** --> 
+<!-- *************************Get Image By User*********************************************** --> 
 
+
+<!-- *************************Get Style List By User*********************************************** --> 
+<a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+    <span style="margin-left:50px;line-height: 1.5em;">14) Get Style List By User</span>
+</a> 
+<div class="accordion-content">
+    <p>
+        <h5>Parameters: </h5>
+        <pre>
+'email'        => 'required|max:255',
+'token' => 'required'
+          </pre>
+    </p>
+    <p> <h5>Response Required: </h5>Status Code (ex: 200, 401)</p>
+    <p> <h5>Brief Description: </h5>token (ex: Mobulous eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNTIzMDA2ODU3fQ.dvLq8ifMcMQHTynI8fJFpSTrrcfu338cW2WPoraXeUs)</p>
+    <p> <h5>requestKey: </h5>getStyleListById</p>
+<p> <h5>method: </h5>POST</p>
+    <p> <h5>Sample Response: </h5>
+<pre>
+    {
+        "status": 200,
+        "data": [
+            {
+                "image": {
+                    "email": "katie@cyndyporter.com",
+                    "id": "5ae77f613e195d1e8c289cfd",
+                    "imageUrl": "http://ec2-18-217-140-4.us-east-2.compute.amazonaws.com/images/15251208176109766.jpg"
+                },
+                "colors": {
+                    "skin": [
+                        "#666666",
+                        "#666666",
+                        "#666666"
+                    ],
+                    "eyes": [
+                        "#cccccc",
+                        "#cccccc",
+                        "#999999"
+                    ],
+                    "lips": [
+                        "#999999",
+                        "#cccccc",
+                        "#cccccc"
+                    ],
+                    "metals": [
+                        "#cccccc",
+                        "#666666",
+                        "#cccccc"
+                    ],
+                    "reds": [
+                        "#cccccc",
+                        "#999999",
+                        "#cccccc"
+                    ],
+                    "neutral": [
+                        "#cccccc",
+                        "#cccccc",
+                        "#cccccc",
+                        "#666666",
+                        "#666666",
+                        "#999999",
+                        "#999999",
+                        "#cccccc",
+                        "#666666",
+                        "#666666"
+                    ],
+                    "wow": [
+                        "#cccccc",
+                        "#cccccc",
+                        "#cccccc",
+                        "#999999",
+                        "#ffffff"
+                    ],
+                    "accent": [
+                        "#999999",
+                        "#999999",
+                        "#ffffff",
+                        "#cccccc",
+                        "#999999",
+                        "#cccccc",
+                        "#cccccc",
+                        "#ffffff"
+                    ],
+                    "avoids": [
+                        "#ffffff",
+                        "#999999",
+                        "#666666",
+                        "#666666",
+                        "#cccccc"
+                    ]
+                },
+                "isUpdated": 1,
+                "createdAt": "2018-04-30T20:41:05.712Z",
+                "updatedAt": "2018-05-03T19:39:49.500Z",
+                "id": "5ae77f613e195d1e8c289cfe"
+            }
+        ],
+        "message": "Style successfully fetched"
+    }
+      </pre>
+    </p>
+    <p> <h5>Test Status: </h5></p>
+    <p> <h5>Notes: </h5></p>
+</div>
+
+
+<!-- *************************Get Style List By User*********************************************** --> 
+
+
+<!-- *************************Terms and Conditions*********************************************** --> 
+<a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+    <span style="margin-left:50px;line-height: 1.5em;">14) Get Terms and Conditions</span>
+</a> 
+<div class="accordion-content">
+    <p>
+        <h5>Parameters: </h5>
+        <pre>
+          </pre>
+    </p>
+    <p> <h5>requestKey: </h5>terms&conditions</p>
+<p> <h5>method: </h5>GET</p>
+   
+    <p> <h5>Test Status: </h5></p>
+    <p> <h5>Notes: </h5></p>
+</div>
+
+
+<!-- *************************Terms and Conditions*********************************************** --> 
+
+
+<!-- *************************Privacy Poilicy*********************************************** --> 
+<a href="#" class="accordion-toggle"><span class="toggle-icon"><i class="fa fa-plus-circle"></i></span>
+    <span style="margin-left:50px;line-height: 1.5em;">14) Get Privacy Policy</span>
+</a> 
+<div class="accordion-content">
+    <p>
+        <h5>Parameters: </h5>
+        <pre>
+          </pre>
+    </p>
+     <p> <h5>requestKey: </h5>PrivacyPolicy</p>
+<p> <h5>method: </h5>GET</p>
+   
+    <p> <h5>Test Status: </h5></p>
+    <p> <h5>Notes: </h5></p>
+</div>
+
+
+<!-- *************************Privacy Policy*********************************************** --> 
 
 
 

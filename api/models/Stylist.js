@@ -11,17 +11,16 @@ module.exports = {
   
   attributes: {
 
-    // stylistId: {
-    //  type: 'number',
-    //   required: 'true',
-    //   autoIncrement: true
-    // },
     name: {
       type: 'string',
       required: true,
     },
-    addedBy: {
+    email: {
       type: 'email',
+      required: true
+    },
+    phoneNumber: {
+      type: 'string',
       required: true
     }
   }

@@ -32,11 +32,11 @@ module.exports = {
 
     sendResetPasswordToken: function (emailDetails) {
         // link = "http://" + config.host + ":" + config.port + "/resetPassword/" + emailDetails.resetToken;
-        link = "ec2-18-217-140-4.us-east-2.compute.amazonaws.com/api/resetPassword/" + emailDetails.resetToken;
+        link = "ec2-18-217-140-4.us-east-2.compute.amazonaws.com/resetPassword/" + emailDetails.resetToken;
         mailOptions = {
             to: emailDetails.email,
-            subject: "Reset Password",
-            html: "Hello " + emailDetails.userName + ",<br> <br> Please find the link for reset your password. You can set new password from this given link.<br><a href=" + link + ">Click here to reset password</a> <br> <br> This link will expire in 1 hour"
+            subject: "Please Reset your Password",
+            html: "Hello,<br> Please Click on the link to reset your password.<br><a href=" + link + ">Click here to reset password</a> <br> This link will expire in 1 hour"
         }
         smtpTransporter.sendMail(mailOptions, function (error, response) {
             if (error) {
@@ -64,12 +64,11 @@ module.exports = {
     sendPDF: function (emailDetails, doc) {
         var data = {
             to: emailDetails.email,
-            subject: '[Success thru Style] Image Details',
-            html: "<div style='font-size: 15px'> Hello, <br><br> <b>Thankyou for being a part of Success thru Style</b><br><br> We are glad to style you in our own way. Success thru style team tried best to respresent you in the best way. <br><br> Representing your color analysis in pdf: <br> <br> <div style='font-size: 14px;color: #8e7e7e;'>Thanks Success thru Style</div></div>",
+            subject: 'Your Image Details',
+            html: "Hello, <br> Please find your image details",
             attachments: [{
                 filename: 'attachment.pdf',
                 content: doc,
-                html: 'test'
             }],
         }
         smtpTransporter.sendMail(data, function (error, response) {
